@@ -1,0 +1,1065 @@
+{
+  "573205289749": {
+    "phone": "573205289749",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hola buenas tardes",
+        "timestamp": "2026-08-20T17:03:36.205Z"
+      },
+      {
+        "role": "assistant",
+        "content": "¡Hola! Buenas tardes 😊 ¿En qué puedo ayudarte hoy en el Restaurante y Parque Temático \"La Aquarela\"?",
+        "timestamp": "2026-08-20T17:03:41.226Z"
+      },
+      {
+        "role": "user",
+        "content": "?",
+        "timestamp": "2026-08-20T17:17:00.846Z"
+      },
+      {
+        "role": "assistant",
+        "content": "¡Hola! ¿En qué puedo ayudarte hoy en el Restaurante y Parque Temático \"La Aquarela\"? 😊",
+        "timestamp": "2026-08-20T17:17:03.580Z"
+      },
+      {
+        "role": "assistant",
+        "content": "hola te habla juliana zapata en que te puedo colaborar?",
+        "timestamp": "2026-08-20T18:43:43.475Z"
+      },
+      {
+        "role": "user",
+        "content": "Quiero reservas",
+        "timestamp": "2026-08-20T18:44:11.901Z"
+      },
+      {
+        "role": "assistant",
+        "content": "¡Genial! Me encantaría ayudarte con tu reserva. Para comenzar, por favor dime:\n\n1. Tu nombre completo.\n2. La fecha y hora en la que deseas hacer la reserva.\n3. El número de personas que asistirán.\n4. Si hay algún motivo especial para la reserva o alguna decoración que desees.\n\nCon esta información, podré asistirte mejor. 😊",
+        "timestamp": "2026-08-20T18:44:14.967Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: ¿A qué horas tienen abierto?",
+        "timestamp": "2026-08-20T18:50:07.639Z"
+      },
+      {
+        "role": "assistant",
+        "content": "Nuestro restaurante \"La Aquarela\" está abierto todos los días de 7:00 AM a 10:00 PM. ¡Esperamos verte pronto! 😊",
+        "timestamp": "2026-08-20T18:50:09.685Z"
+      },
+      {
+        "role": "user",
+        "content": "Quiero hacer una reserva",
+        "timestamp": "2026-08-20T22:35:32.644Z"
+      },
+      {
+        "role": "assistant",
+        "content": "¡Claro! Para ayudarte con la reserva, necesito algunos detalles:\n\n1. Nombre completo.\n2. Fecha y hora de la reserva.\n3. Número de personas.\n4. Zona deseada.\n5. Tipo de evento y si hay algún motivo especial a celebrar.\n6. Decoración elegida y pre-orden de platos (si aplica).\n7. Informar alergias o necesidad de silla de ruedas.\n\nPor favor, proporciona esta información para proceder con la reserva. 😊",
+        "timestamp": "2026-08-20T22:35:34.390Z"
+      },
+      {
+        "role": "user",
+        "content": "Alejandra mondragon \nHoy 8pm \n2\nFuego\nCumpleaños \nPimienta",
+        "timestamp": "2026-08-20T22:36:19.790Z"
+      },
+      {
+        "role": "assistant",
+        "content": "[RESERVA_TRIGGER]{\"nombre\":\"Alejandra Mondragon\",\"fecha_hora\":\"2023-10-25T20:00:00-05:00\",\"personas\":2,\"detalles\":\"Zona Fuego, Cumpleaños, Decoración Pimienta\"}",
+        "timestamp": "2026-08-20T22:36:21.899Z"
+      },
+      {
+        "role": "user",
+        "content": "Quiero hacer una reserva",
+        "timestamp": "2026-08-20T22:41:10.741Z"
+      },
+      {
+        "role": "assistant",
+        "content": "¡Claro! 😊 Para ayudarte con la reserva, necesito algunos detalles:\n\n1. Nombre completo del cliente.\n2. Fecha y hora de la reserva.\n3. Número total de personas que asistirán.\n4. Detalles adicionales, decoración, o alergias (si aplica).\n\nPor favor, proporciona esta información para proceder.",
+        "timestamp": "2026-08-20T22:41:12.650Z"
+      },
+      {
+        "role": "user",
+        "content": "Quiero hacer una reserva",
+        "timestamp": "2026-08-20T22:41:19.400Z"
+      },
+      {
+        "role": "assistant",
+        "content": "¡Por supuesto! Para ayudarte con la reserva, necesito algunos detalles:\n\n1. Nombre completo del cliente.\n2. Fecha y hora de la reserva.\n3. Número total de personas que asistirán.\n4. Detalles adicionales, decoración, o alergias (si aplica).\n\nPor favor, proporciona esta información para proceder.",
+        "timestamp": "2026-08-20T22:41:20.685Z"
+      },
+      {
+        "role": "user",
+        "content": "Alejandra mondragon \nHoy 8pm \n2\nFuego\nCumpleaños \nPimienta",
+        "timestamp": "2026-08-20T22:41:20.747Z"
+      },
+      {
+        "role": "assistant",
+        "content": "[RESERVA_TRIGGER]{\"nombre\":\"Alejandra Mondragon\",\"fecha_hora\":\"2026-08-20T20:00:00-05:00\",\"personas\":2,\"detalles\":\"Zona Fuego, Cumpleaños, Nota sobre pimienta\"}",
+        "timestamp": "2026-08-20T22:41:22.455Z"
+      },
+      {
+        "role": "assistant",
+        "content": "hola como estas soy juliana",
+        "timestamp": "2026-08-20T22:43:35.252Z"
+      },
+      {
+        "role": "user",
+        "content": "Gracias",
+        "timestamp": "2026-08-20T22:45:21.672Z"
+      },
+      {
+        "role": "assistant",
+        "content": "[RESERVA_TRIGGER]{\"nombre\":\"Alejandra Mondragon\",\"fecha_hora\":\"2026-08-20T20:00:00-05:00\",\"personas\":2,\"detalles\":\"Zona Fuego, Cumpleaños, Nota sobre pimienta\"}",
+        "timestamp": "2026-08-20T22:45:23.802Z"
+      }
+    ],
+    "lastUpdated": "2026-08-20T22:49:05.748Z",
+    "aiPaused": false
+  },
+  "undefined": {
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hola",
+        "timestamp": "2026-08-20T21:13:21.017Z"
+      },
+      {
+        "role": "assistant",
+        "content": "¡Hola! Bienvenido al Restaurante y Parque Temático \"La Aquarela\". ¿En qué puedo ayudarte hoy? 😊",
+        "timestamp": "2026-08-20T21:13:23.643Z"
+      }
+    ],
+    "lastUpdated": "2026-08-20T21:13:23.643Z",
+    "aiPaused": false
+  },
+  "CO.3060760770789047": {
+    "phone": "CO.3060760770789047",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hola",
+        "timestamp": "2026-08-20T21:16:57.144Z"
+      },
+      {
+        "role": "assistant",
+        "content": "¡Hola! Bienvenido al Restaurante y Parque Temático \"La Aquarela\". ¿En qué puedo ayudarte hoy? 😊",
+        "timestamp": "2026-08-20T21:16:59.238Z"
+      },
+      {
+        "role": "user",
+        "content": "Hola",
+        "timestamp": "2026-08-20T21:18:49.989Z"
+      },
+      {
+        "role": "assistant",
+        "content": "¡Hola! Bienvenido al Restaurante y Parque Temático \"La Aquarela\". ¿En qué puedo ayudarte hoy? 😊",
+        "timestamp": "2026-08-20T21:18:51.175Z"
+      },
+      {
+        "role": "user",
+        "content": "Hola",
+        "timestamp": "2026-08-20T21:20:39.980Z"
+      },
+      {
+        "role": "assistant",
+        "content": "¡Hola de nuevo! ¿En qué puedo asistirte hoy? 😊",
+        "timestamp": "2026-08-20T21:20:41.148Z"
+      },
+      {
+        "role": "user",
+        "content": "Hola",
+        "timestamp": "2026-08-21T18:34:20.469Z"
+      },
+      {
+        "role": "assistant",
+        "content": "¡Hola! 😊 ¿En qué puedo ayudarte hoy en el Restaurante y Parque Temático \"La Aquarela\"?",
+        "timestamp": "2026-08-21T18:34:23.085Z"
+      },
+      {
+        "role": "user",
+        "content": "Hola",
+        "timestamp": "2026-08-21T18:46:57.955Z"
+      },
+      {
+        "role": "assistant",
+        "content": "¡Hola de nuevo! 😊 ¿Cómo puedo asistirte hoy en el Restaurante y Parque Temático \"La Aquarela\"?",
+        "timestamp": "2026-08-21T18:46:59.968Z"
+      },
+      {
+        "role": "user",
+        "content": "H",
+        "timestamp": "2026-08-21T18:55:24.135Z"
+      },
+      {
+        "role": "assistant",
+        "content": "¡Hola! ¿En qué puedo ayudarte hoy? Si tienes alguna pregunta sobre el restaurante, el parque temático o deseas hacer una reserva, estoy aquí para asistirte. 😊",
+        "timestamp": "2026-08-21T18:55:25.423Z"
+      }
+    ],
+    "lastUpdated": "2026-08-21T18:55:25.423Z",
+    "aiPaused": false
+  },
+  "573168659823": {
+    "phone": "573168659823",
+    "messages": [
+      {
+        "role": "user",
+        "content": "hola",
+        "timestamp": "2026-08-20T21:18:37.127Z"
+      },
+      {
+        "role": "assistant",
+        "content": "¡Hola! Bienvenido al Restaurante y Parque Temático \"La Aquarela\". ¿En qué puedo ayudarte hoy? 😊",
+        "timestamp": "2026-08-20T21:18:38.845Z"
+      }
+    ],
+    "lastUpdated": "2026-08-20T21:18:38.845Z",
+    "aiPaused": false
+  },
+  "573183764628": {
+    "phone": "573183764628",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hola",
+        "timestamp": "2026-08-20T21:19:32.704Z"
+      },
+      {
+        "role": "assistant",
+        "content": "¡Hola! Bienvenido al Restaurante y Parque Temático \"La Aquarela\". ¿En qué puedo ayudarte hoy? 😊",
+        "timestamp": "2026-08-20T21:19:34.154Z"
+      },
+      {
+        "role": "user",
+        "content": "Que puedo encontrar allá en Aquarela",
+        "timestamp": "2026-08-20T21:27:47.708Z"
+      },
+      {
+        "role": "assistant",
+        "content": "En \"La Aquarela\" puedes disfrutar de una experiencia única que combina deliciosa comida con diversión en nuestro Parque Temático. Al consumir en el restaurante, tienes acceso gratuito a todas las atracciones del parque, que incluyen:\n\n- Tobogán de pelotas\n- Deslizaderos\n- Máquinas de arcades\n- Juego de sapo\n- Toboganes del balcón\n- Playground\n- Arenero\n- Granja\n\nAdemás, contamos con un **Lago de pesca deportiva** donde puedes pescar cachama, trucha y tilapia roja por un costo de $12,000 la libra.\n\nSi deseas más información sobre nuestros menús o hacer una reserva, ¡estoy aquí para ayudarte! 😊",
+        "timestamp": "2026-08-20T21:27:49.698Z"
+      },
+      {
+        "role": "user",
+        "content": "Cuabt9 la libra de pescado",
+        "timestamp": "2026-08-20T21:28:10.532Z"
+      },
+      {
+        "role": "assistant",
+        "content": "La libra de pescado en nuestro Lago de pesca deportiva tiene un costo de $12,000. Puedes pescar cachama, trucha y tilapia roja. Si tienes alguna otra pregunta o necesitas más información, ¡déjame saber! 😊",
+        "timestamp": "2026-08-20T21:28:11.946Z"
+      },
+      {
+        "role": "user",
+        "content": "Menú",
+        "timestamp": "2026-08-20T21:29:14.059Z"
+      },
+      {
+        "role": "assistant",
+        "content": "¡Claro! Aquí tienes un resumen de nuestros menús y precios:\n\n### Desayunos 2x1\n- **Opción 1:** Omelette, pericos o huevos revueltos con bebida ($20,000)\n- **Opción 2:** Calentados con arepa, queso y bebida ($26,000)\n- **Opción 3:** Tamales con bebida ($38,000)\n\n### Otros Menús\n- **Menú Especial:** $30,000 por persona (Aplica solo para grupos de 20 personas en adelante).\n- **Carta Abierta:** Disfruta de nuestra variedad de platos.\n\nSi deseas ver el menú completo, por favor indícamelo y te lo enviaré en formato PDF. [ENVIAR_PDF]",
+        "timestamp": "2026-08-20T21:29:16.972Z"
+      },
+      {
+        "role": "user",
+        "content": "Promos 2x1",
+        "timestamp": "2026-08-20T21:29:36.646Z"
+      },
+      {
+        "role": "assistant",
+        "content": "Tenemos una promoción especial de desayunos 2x1. Aquí están las opciones disponibles:\n\n- **Opción 1:** Omelette, pericos o huevos revueltos con bebida ($20,000)\n- **Opción 2:** Calentados con arepa, queso y bebida ($26,000)\n- **Opción 3:** Tamales con bebida ($38,000)\n\n¡Es una excelente manera de comenzar el día! Si tienes alguna otra pregunta o necesitas más información, estaré encantado de ayudarte. 😊",
+        "timestamp": "2026-08-20T21:29:38.684Z"
+      },
+      {
+        "role": "user",
+        "content": "El.salon de eventos para cuantas personas esta",
+        "timestamp": "2026-08-20T21:32:29.709Z"
+      },
+      {
+        "role": "assistant",
+        "content": "El Salón de Eventos tiene una capacidad máxima para 80 personas. Este salón cuenta con video beam, 3 aires acondicionados y sonido. Es importante mencionar que requiere el servicio de mesero personalizado. Si necesitas más información o deseas hacer una reserva, ¡déjame saber! 😊",
+        "timestamp": "2026-08-20T21:32:31.439Z"
+      },
+      {
+        "role": "user",
+        "content": "Quebtrae",
+        "timestamp": "2026-08-20T21:32:34.510Z"
+      },
+      {
+        "role": "assistant",
+        "content": "El Salón de Eventos incluye las siguientes comodidades:\n\n- Capacidad para hasta 80 personas.\n- Video beam para presentaciones o proyecciones.\n- 3 aires acondicionados para mantener un ambiente cómodo.\n- Sistema de sonido para música o anuncios.\n\nRecuerda que para utilizar el Salón de Eventos, es necesario contratar un mesero personalizado por un valor de $80,000. Si estás interesado en reservar o necesitas más detalles, ¡estoy aquí para ayudarte! 😊",
+        "timestamp": "2026-08-20T21:32:36.063Z"
+      },
+      {
+        "role": "user",
+        "content": "Puedo llevar la comida",
+        "timestamp": "2026-08-20T21:32:43.737Z"
+      },
+      {
+        "role": "assistant",
+        "content": "No se permite el ingreso de alimentos ni bebidas externas al restaurante, ya que nuestro principal ingreso es la venta de productos. Sin embargo, si estás celebrando un evento especial como un cumpleaños, puedes traer tu propia torta y decoración para hacer de tu celebración un momento inolvidable. Si tienes más preguntas o necesitas ayuda con una reserva, ¡déjame saber! 😊🎉",
+        "timestamp": "2026-08-20T21:32:45.358Z"
+      },
+      {
+        "role": "user",
+        "content": "Deseo hacer la reserva",
+        "timestamp": "2026-08-20T21:33:02.780Z"
+      },
+      {
+        "role": "assistant",
+        "content": "¡Perfecto! Para proceder con la reserva, necesitaré algunos detalles:\n\n1. Nombre completo.\n2. Día y hora deseada.\n3. Zona del restaurante que prefieres.\n4. Cantidad de personas.\n5. Tipo de evento (si aplica) y si hay algún motivo especial para celebrar.\n6. Decoración elegida y pre-orden de platos (si aplica).\n7. Información sobre alergias o necesidades especiales, como silla de ruedas.\n\nUna vez que tenga esta información, podré ayudarte a completar la reserva. 😊",
+        "timestamp": "2026-08-20T21:33:04.501Z"
+      },
+      {
+        "role": "user",
+        "content": "Puedo llevar torta",
+        "timestamp": "2026-08-20T21:35:43.963Z"
+      },
+      {
+        "role": "assistant",
+        "content": "¡Claro que sí! Si estás celebrando un evento especial como un cumpleaños, puedes traer tu propia torta y decoración. Esto te permitirá personalizar tu celebración y hacerla aún más especial. Si necesitas ayuda con la reserva o tienes más preguntas, ¡aquí estoy para ayudarte! 🎂🎉",
+        "timestamp": "2026-08-20T21:35:46.091Z"
+      },
+      {
+        "role": "user",
+        "content": "Que promociones hay",
+        "timestamp": "2026-08-20T21:35:48.551Z"
+      },
+      {
+        "role": "assistant",
+        "content": "Actualmente, en el Restaurante La Aquarela tenemos las siguientes promociones:\n\n### Desayunos 2x1\n- **Opción 1:** Omelette, pericos o huevos revueltos con bebida ($20,000)\n- **Opción 2:** Calentados con arepa, queso y bebida ($26,000)\n- **Opción 3:** Tamales con bebida ($38,000)\n\nEstas promociones son una excelente manera de disfrutar de un delicioso desayuno en compañía. Si deseas más información sobre otras ofertas o servicios, ¡déjame saber! 😊",
+        "timestamp": "2026-08-20T21:35:50.358Z"
+      },
+      {
+        "role": "user",
+        "content": "Puedo llevar la mascota",
+        "timestamp": "2026-08-20T21:35:55.306Z"
+      },
+      {
+        "role": "assistant",
+        "content": "No tengo información específica sobre la política de mascotas en el Restaurante La Aquarela. Te recomendaría consultar directamente con el personal del restaurante para obtener una respuesta precisa. Si tienes alguna otra pregunta o necesitas ayuda con una reserva, estaré encantado de asistirte. 😊",
+        "timestamp": "2026-08-20T21:35:56.535Z"
+      },
+      {
+        "role": "user",
+        "content": "Puedo llevar perro",
+        "timestamp": "2026-08-20T21:36:09.145Z"
+      },
+      {
+        "role": "assistant",
+        "content": "No tengo información específica sobre la política de mascotas en el Restaurante La Aquarela. Te recomendaría contactar directamente con el restaurante para obtener una respuesta precisa sobre si puedes llevar a tu perro. Si tienes más preguntas o necesitas ayuda con una reserva, ¡estoy aquí para ayudarte! 😊",
+        "timestamp": "2026-08-20T21:36:10.561Z"
+      },
+      {
+        "role": "user",
+        "content": "A pesar de quebhsu comprado la comida puedo llevar gaseosa",
+        "timestamp": "2026-08-20T21:37:14.891Z"
+      },
+      {
+        "role": "assistant",
+        "content": "No se permite el ingreso de bebidas externas al restaurante, ya que nuestro principal ingreso es la venta de productos. Sin embargo, puedes disfrutar de una amplia variedad de bebidas que ofrecemos en nuestro menú. Si tienes alguna otra pregunta o necesitas ayuda con una reserva, ¡déjame saber! 😊",
+        "timestamp": "2026-08-20T21:37:16.406Z"
+      },
+      {
+        "role": "user",
+        "content": "Puedo llevar la decoración y la torta",
+        "timestamp": "2026-08-20T21:37:32.798Z"
+      },
+      {
+        "role": "assistant",
+        "content": "¡Sí, puedes! Si estás celebrando un evento especial como un cumpleaños, puedes traer tu propia torta y decoración. Esto te permitirá personalizar tu celebración y hacerla aún más especial. Si necesitas ayuda con la reserva o tienes más preguntas, ¡aquí estoy para ayudarte! 🎂🎉",
+        "timestamp": "2026-08-20T21:37:34.127Z"
+      },
+      {
+        "role": "user",
+        "content": "Valor del parque",
+        "timestamp": "2026-08-20T21:38:11.372Z"
+      },
+      {
+        "role": "assistant",
+        "content": "El acceso al Parque Temático es gratuito con el consumo en el restaurante. Esto incluye atracciones como el tobogán de pelotas, deslizaderos, máquinas de arcades, juego de sapo, toboganes del balcón, playground, arenero, y la granja. Sin embargo, el lago de pesca deportiva tiene un costo de $12,000 por libra de pescado. Si tienes más preguntas o necesitas ayuda con una reserva, ¡estaré encantado de asistirte! 😊",
+        "timestamp": "2026-08-20T21:38:13.315Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: Tengo una pregunta, lo que pasa es que quiero que me explique lo del mesero personalizado.",
+        "timestamp": "2026-08-20T21:41:38.722Z"
+      },
+      {
+        "role": "assistant",
+        "content": "Claro, te explico sobre el servicio de mesero personalizado. Para reservas mayores a 20 personas o aquellas ubicadas en el \"Salón de Eventos\", es obligatorio contar con un mesero personalizado. Este servicio tiene un costo de $80,000. El mesero se encargará de atender exclusivamente a tu grupo, asegurando un servicio más personalizado y eficiente durante tu evento. Si tienes más preguntas o necesitas ayuda con una reserva, ¡estoy aquí para ayudarte! 😊",
+        "timestamp": "2026-08-20T21:41:40.599Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: Niña, la propina es voluntaria.",
+        "timestamp": "2026-08-20T21:44:50.467Z"
+      },
+      {
+        "role": "assistant",
+        "content": "Sí, la propina es voluntaria y se deja a discreción del cliente como agradecimiento por el servicio recibido. Si tienes alguna otra pregunta o necesitas más información, ¡estaré encantado de ayudarte! 😊",
+        "timestamp": "2026-08-20T21:44:52.006Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: Pues obligatoria.",
+        "timestamp": "2026-08-20T21:44:57.822Z"
+      },
+      {
+        "role": "assistant",
+        "content": "Entiendo tu preocupación. En el caso del servicio de mesero personalizado, el costo de $80,000 es una tarifa fija por el servicio exclusivo que se brinda para eventos específicos, como grupos grandes o en el Salón de Eventos. Sin embargo, la propina adicional sigue siendo voluntaria y depende de tu satisfacción con el servicio. Si tienes más preguntas o necesitas asistencia, no dudes en decírmelo. 😊",
+        "timestamp": "2026-08-20T21:44:59.222Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: Niña, lo que pasa es que mi mamá es diabética y ella quiere sopa. Allá hay sopas.",
+        "timestamp": "2026-08-20T21:45:48.505Z"
+      },
+      {
+        "role": "assistant",
+        "content": "En nuestro restaurante, ofrecemos una variedad de platos en la carta abierta, que incluye opciones que podrían adaptarse a las necesidades de tu mamá. Sin embargo, no tengo el detalle específico de cada plato, como las sopas, en mi base de conocimientos. Te recomendaría consultar directamente con el restaurante para verificar las opciones disponibles y asegurarte de que sean adecuadas para una dieta diabética. Si necesitas más ayuda o deseas hacer una reserva, ¡estoy aquí para asistirte! 😊",
+        "timestamp": "2026-08-20T21:45:50.556Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: Niña, lo que pasa es que yo quiero ir en silla de ruedas. Todo el trayecto del restaurante tiene movilidad reducida.",
+        "timestamp": "2026-08-20T21:46:27.666Z"
+      },
+      {
+        "role": "assistant",
+        "content": "¡Claro! En el restaurante La Aquarela, nos aseguramos de que todos nuestros clientes tengan una experiencia cómoda y accesible. Contamos con instalaciones adecuadas para personas con movilidad reducida, incluyendo acceso para sillas de ruedas. Si decides visitarnos y necesitas alguna asistencia adicional, no dudes en informarnos al momento de hacer tu reserva para que podamos prepararnos adecuadamente. Si tienes más preguntas o necesitas ayuda con la reserva, ¡estoy aquí para ayudarte! 😊",
+        "timestamp": "2026-08-20T21:46:29.444Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: Niña, yo quiero una decoración pinwheel. Allá hacen decoraciones pinwheel.",
+        "timestamp": "2026-08-20T21:46:57.117Z"
+      },
+      {
+        "role": "assistant",
+        "content": "Para conocer las opciones de decoraciones específicas como la \"pinwheel\", te recomendaría consultar directamente con el restaurante, ya que no tengo detalles sobre tipos específicos de decoraciones en mi base de conocimientos. Sin embargo, si decides hacer una reserva y deseas una decoración especial, puedo ayudarte a coordinarlo con el equipo del restaurante. Si necesitas más información o asistencia, ¡estoy aquí para ayudarte! 😊",
+        "timestamp": "2026-08-20T21:46:59.002Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: Niña, hay atención en la zona de balcones que yo quiero estar al lado de la maya catamarán. Yo quiero comer ahí, ¿se puede?",
+        "timestamp": "2026-08-20T21:47:36.640Z"
+      },
+      {
+        "role": "assistant",
+        "content": "¡Claro! En el restaurante La Aquarela, puedes disfrutar de tu comida en las terrazas, que incluyen diferentes áreas como Aire, Juego, Tierra y Agua. Estas zonas tienen capacidad para 60 personas cada una y, unidas, pueden albergar hasta 300 personas. Si deseas estar cerca de una zona específica como la maya catamarán, te recomendaría mencionarlo al momento de hacer tu reserva para que podamos intentar acomodarte en el lugar que prefieras. Si necesitas ayuda con la reserva o más información, ¡estoy aquí para asistirte! 😊",
+        "timestamp": "2026-08-20T21:47:38.590Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: Niña, si yo quiero hacerle un foto estudio a mi hija, cuánto tengo que pagar o cómo es el asunto, y si le puedo tomar fotos en todos los spots.",
+        "timestamp": "2026-08-20T21:49:45.565Z"
+      },
+      {
+        "role": "assistant",
+        "content": "Para realizar un foto estudio en el restaurante y parque temático La Aquarela, te recomendaría contactar directamente con el restaurante para obtener detalles específicos sobre permisos y costos asociados, ya que esta información no está en mi base de conocimientos. Generalmente, los clientes pueden tomar fotos durante su visita, pero para un foto estudio más formal, es posible que se requieran arreglos especiales. Si tienes más preguntas o necesitas asistencia con una reserva, ¡estoy aquí para ayudarte! 😊",
+        "timestamp": "2026-08-20T21:49:47.830Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: Niña, si yo le quiero dejar fotos a mi hijo, ¿puedo hacerlo?",
+        "timestamp": "2026-08-20T21:51:34.616Z"
+      },
+      {
+        "role": "assistant",
+        "content": "¡Por supuesto! Durante tu visita al restaurante y parque temático La Aquarela, puedes tomar fotos para capturar los momentos especiales con tu hijo. Si estás interesado en ver fotos de las diferentes zonas del restaurante para planificar tu visita, puedo ayudarte con eso. Solo dime qué zona te interesa y te proporcionaré más información. Si tienes más preguntas o necesitas ayuda con una reserva, ¡estoy aquí para asistirte! 😊",
+        "timestamp": "2026-08-20T21:51:36.256Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: Niña, si yo quiero que me partan una torta yo tengo que llevar los platos o usted me los pesa?",
+        "timestamp": "2026-08-20T21:51:46.908Z"
+      },
+      {
+        "role": "assistant",
+        "content": "¡No te preocupes por eso! Si estás celebrando un evento especial como un cumpleaños, puedes traer tu propia torta y decoración. El restaurante se encargará de proporcionarte los platos y utensilios necesarios para partir y servir la torta. Si tienes más preguntas o necesitas ayuda con una reserva, ¡estoy aquí para asistirte! 🎉😊",
+        "timestamp": "2026-08-20T21:51:48.519Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: Niña, lo que pasa es que yo quiero hacer una reserva en el salón de eventos pero entonces yo quiero llevar la comida y necesito el videovídeo, ¿se puede?",
+        "timestamp": "2026-08-20T21:52:24.489Z"
+      },
+      {
+        "role": "assistant",
+        "content": "En el Salón de Eventos del restaurante La Aquarela, puedes disfrutar de una capacidad máxima de 80 personas, y el salón cuenta con un videobeam, 3 aires acondicionados y sonido. Sin embargo, no se permite el ingreso de alimentos ni bebidas externas, ya que el principal ingreso del restaurante es la venta de productos. \n\nSi deseas hacer una reserva en el Salón de Eventos, te recordamos que se requiere un servicio de mesero personalizado por un valor de $80,000. Si estás interesado en hacer la reserva o necesitas más información, ¡estoy aquí para ayudarte! 😊",
+        "timestamp": "2026-08-20T21:52:26.432Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: Niña, lo que pasa es que en mi empresa apenas somos ocho personas y necesitamos el videojuego para el salón de eventos. ¿Lo puedo usar?",
+        "timestamp": "2026-08-20T21:52:48.443Z"
+      },
+      {
+        "role": "assistant",
+        "content": "¡Claro! Aunque el Salón de Eventos tiene una capacidad máxima de 80 personas, puedes reservarlo para un grupo más pequeño como el tuyo de 8 personas. El salón cuenta con un videobeam que puedes utilizar para tus necesidades. \n\nRecuerda que para las reservas en el Salón de Eventos, se requiere un servicio de mesero personalizado por un valor de $80,000. Si deseas proceder con la reserva o necesitas más información, estaré encantado de ayudarte. 😊",
+        "timestamp": "2026-08-20T21:52:50.387Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: Niña, ¿ustedes tienen piscina?",
+        "timestamp": "2026-08-20T21:53:12.406Z"
+      },
+      {
+        "role": "assistant",
+        "content": "No, el restaurante y parque temático La Aquarela no cuenta con piscina. Sin embargo, ofrece una variedad de atracciones como el tobogán de pelotas, deslizaderos, máquinas de arcades, juego de sapo, toboganes del balcón, playground, arenero, granja y un lago de pesca deportiva. Si tienes más preguntas o necesitas ayuda con una reserva, ¡estoy aquí para asistirte! 😊",
+        "timestamp": "2026-08-20T21:53:15.293Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: Niña, ahí hay río. ¿Y me puedo bañar en él?",
+        "timestamp": "2026-08-20T21:54:25.329Z"
+      },
+      {
+        "role": "assistant",
+        "content": "El restaurante y parque temático La Aquarela no cuenta con un río para bañarse. Sin embargo, ofrece muchas otras atracciones divertidas como el tobogán de pelotas, deslizaderos, máquinas de arcades, y un lago de pesca deportiva. Si tienes más preguntas o necesitas ayuda con una reserva, ¡estoy aquí para asistirte! 😊",
+        "timestamp": "2026-08-20T21:54:26.856Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: Niña, es que yo tengo una reserva a las 10 de la mañana, pero quiero llegar antes a decorar. ¿Desde qué hora se puede ingresar?",
+        "timestamp": "2026-08-20T21:55:51.072Z"
+      },
+      {
+        "role": "assistant",
+        "content": "El restaurante La Aquarela abre sus puertas a las 7:00 AM todos los días. Puedes llegar a partir de esa hora para comenzar con la decoración antes de tu reserva a las 10:00 AM. Si necesitas más ayuda o tienes alguna otra pregunta, ¡estoy aquí para asistirte! 😊",
+        "timestamp": "2026-08-20T21:55:55.638Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: Niña, es que mi hijo tiene autismo, ¿lo puedo llevar?",
+        "timestamp": "2026-08-20T21:56:45.198Z"
+      },
+      {
+        "role": "assistant",
+        "content": "¡Por supuesto! Todos son bienvenidos en el restaurante y parque temático La Aquarela. Si necesitas alguna asistencia especial o adaptaciones para que tu hijo se sienta cómodo durante su visita, no dudes en informarnos. Queremos asegurarnos de que tu experiencia sea lo más placentera posible. Si tienes más preguntas o necesitas ayuda con una reserva, ¡estoy aquí para ayudarte! 😊",
+        "timestamp": "2026-08-20T21:56:46.769Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: Ay, es que yo vi unas zonas privadas, usted me puede decir cuánto cuesta por horas y cuáles son?",
+        "timestamp": "2026-08-20T21:57:19.029Z"
+      },
+      {
+        "role": "assistant",
+        "content": "Claro, en La Aquarela contamos con zonas privadas llamadas \"Zonas Cosmos / Cosmos 105\". Estas tienen una capacidad máxima de 25 personas y se alquilan por horas con los siguientes costos:\n\n- 1 hora: $50,000\n- 2 horas: $70,000\n- 3 horas: $80,000\n\nSi deseas más información o quieres hacer una reserva, ¡estoy aquí para ayudarte! 😊",
+        "timestamp": "2026-08-20T21:57:22.572Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: Niña, hay una zona que se llama Spice porque también es el spy.",
+        "timestamp": "2026-08-20T22:00:02.295Z"
+      },
+      {
+        "role": "assistant",
+        "content": "Parece que hay una confusión. En La Aquarela no tenemos una zona llamada \"Spice\" o \"Spy\". Sin embargo, contamos con una \"Zona Spa\" que incluye un jacuzzi y un paquete de 4 horas. Este paquete incluye cena, comida, bebidas, cócteles, decoración y el uso del jacuzzi, con un valor de $390,000 para un máximo de 6 personas.\n\nSi necesitas más información o deseas hacer una reserva, ¡estoy aquí para ayudarte! 😊",
+        "timestamp": "2026-08-20T22:00:05.001Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: Hola niña, lo que pasa es que a mi hijo lo van a bautizar, la misa empieza a las 7 de la mañana, pero yo sé que eso siempre se alarga, entonces yo creo que los desayunos para que los sirvan por ahí, a las 11 de la mañana, pero sin embargo yo llamaría 5 minutos antes para que los sirvan, para que los tengan ahí listitos.",
+        "timestamp": "2026-08-20T22:03:12.051Z"
+      },
+      {
+        "role": "assistant",
+        "content": "¡Felicidades por el bautizo de tu hijo! 🎉\n\nPodemos coordinar para que los desayunos estén listos a las 11 de la mañana. Sin embargo, te recomiendo que nos avises con un poco más de antelación para asegurarnos de que todo esté perfecto para tu llegada. \n\nSi deseas hacer una reserva o necesitas más detalles, estaré encantado de ayudarte. 😊",
+        "timestamp": "2026-08-20T22:03:14.213Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: Niña, es que en el menú especial somos 60 personas, pero entonces queremos tomar todo el menú. Se puede y algunos con un arroz y otros con otro arroz.",
+        "timestamp": "2026-08-20T22:06:00.888Z"
+      },
+      {
+        "role": "assistant",
+        "content": "Para grupos grandes como el tuyo, el Menú Especial es una excelente opción. Este menú tiene un costo de $30,000 por persona y aplica para grupos de 20 personas en adelante. \n\nPodemos coordinar para que algunos de tus invitados tengan un tipo de arroz y otros otro, según tus preferencias. \n\nDado que son 60 personas, recuerda que las reservas de más de 20 personas requieren un mesero personalizado, con un costo de $80,000. \n\nSi deseas proceder con la reserva o necesitas más detalles, por favor házmelo saber y estaré encantado de ayudarte. 😊",
+        "timestamp": "2026-08-20T22:06:03.234Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: Niña, teniendo en cuenta que no se pueden cambiar todos los platos que sean diferentes del menú especial, pero te hago una pregunta, para el cumpleaños que pueda pedir a la carta lo puede hacer? O si él quiere también del mismo menú lo puede hacer?",
+        "timestamp": "2026-08-20T22:06:37.800Z"
+      },
+      {
+        "role": "assistant",
+        "content": "¡Claro! Durante el cumpleaños, tus invitados pueden elegir entre el Menú Especial o pedir a la carta. La Carta Abierta ofrece una variedad de platos para que cada invitado pueda seleccionar lo que más le guste. \n\nSi decides optar por el Menú Especial para algunos y la Carta Abierta para otros, podemos coordinarlo sin problema. Si necesitas más información o deseas hacer una reserva, ¡estoy aquí para ayudarte! 😊",
+        "timestamp": "2026-08-20T22:06:40.244Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: Niña, yo quiero saber cuánto cuestan los parapentes.",
+        "timestamp": "2026-08-20T22:08:53.775Z"
+      },
+      {
+        "role": "assistant",
+        "content": "Lo siento, pero en La Aquarela no ofrecemos actividades de parapente. Nos especializamos en ofrecer una experiencia gastronómica y de entretenimiento en nuestro restaurante y parque temático. Si tienes más preguntas sobre nuestros servicios o deseas hacer una reserva, estaré encantado de ayudarte. 😊",
+        "timestamp": "2026-08-20T22:08:55.614Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: Niña, yo quiero comprar una torta. ¿Usted ve la torta?",
+        "timestamp": "2026-08-20T22:09:56.586Z"
+      },
+      {
+        "role": "assistant",
+        "content": "En La Aquarela, permitimos que los clientes traigan su propia torta si están celebrando un evento especial, como un cumpleaños. Sin embargo, no vendemos tortas directamente en el restaurante. \n\nSi deseas más información sobre cómo organizar tu evento o necesitas ayuda con una reserva, ¡estoy aquí para ayudarte! 😊",
+        "timestamp": "2026-08-20T22:09:57.975Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: Niña, es que yo solamente voy a ir con mi hija, le voy a celebrar el cumpleaños, pero quiero que el postrecito diga feliz cumpleaños, ¿se puede?",
+        "timestamp": "2026-08-20T22:10:32.228Z"
+      },
+      {
+        "role": "assistant",
+        "content": "¡Qué lindo detalle para tu hija! 🎉 Podemos coordinar para que el postre tenga un mensaje especial de \"Feliz Cumpleaños\". Solo asegúrate de mencionarlo al momento de hacer la reserva o cuando llegues al restaurante, para que nuestro equipo pueda prepararlo con antelación.\n\nSi deseas hacer una reserva o necesitas más detalles, por favor házmelo saber. Estoy aquí para ayudarte. 😊",
+        "timestamp": "2026-08-20T22:10:34.057Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: Niña lo que pasa es que yo le quiero llevar dos flores para el paquete de la cena romántica y quiero llevarle unos mariachis, ¿lo puedo hacer?",
+        "timestamp": "2026-08-20T22:11:01.488Z"
+      },
+      {
+        "role": "assistant",
+        "content": "¡Qué romántico! 🌹 Para el paquete de Cena Romántica, puedes traer tus propias flores para complementar la decoración. En cuanto a los mariachis, sería una adición encantadora. Te recomiendo coordinar con nosotros para asegurarnos de que todo esté en orden y no haya inconvenientes con el horario o el espacio.\n\nSi deseas proceder con la reserva o necesitas más detalles, por favor házmelo saber. Estoy aquí para ayudarte a que sea una noche inolvidable. 😊",
+        "timestamp": "2026-08-20T22:11:03.308Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: Niña, buena tarde. ¿Usted me puede hacer el favor de decirme si hay amanejado domicilio?",
+        "timestamp": "2026-08-20T22:11:39.270Z"
+      },
+      {
+        "role": "assistant",
+        "content": "¡Hola! Actualmente, no ofrecemos servicio de domicilio. Sin embargo, te invitamos a disfrutar de una experiencia completa en nuestro restaurante y parque temático, donde podrás disfrutar de todas nuestras instalaciones y delicias culinarias. \n\nSi tienes más preguntas o deseas hacer una reserva, estaré encantado de ayudarte. 😊",
+        "timestamp": "2026-08-20T22:11:41.122Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: Niña en la fiesta de San Chilipiestre, en la barraza de este año.",
+        "timestamp": "2026-08-20T22:13:47.403Z"
+      },
+      {
+        "role": "assistant",
+        "content": "Lo siento, pero no tengo información sobre la \"fiesta de San Chilipiestre\" o la \"barraza\". Si se trata de un evento especial que deseas organizar en La Aquarela, estaré encantado de ayudarte a planificarlo. \n\nSi tienes más detalles o preguntas específicas, por favor házmelo saber. 😊",
+        "timestamp": "2026-08-20T22:13:50.116Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: Niña, ya hay parqueado.",
+        "timestamp": "2026-08-20T22:15:00.161Z"
+      },
+      {
+        "role": "assistant",
+        "content": "¡Sí! En La Aquarela contamos con parqueadero privado y sin costo para nuestros clientes. Así que puedes venir con tranquilidad y disfrutar de tu visita. Si tienes más preguntas o necesitas ayuda con una reserva, estoy aquí para ayudarte. 😊",
+        "timestamp": "2026-08-20T22:15:02.502Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: Niña, lo que pasa es que yo vivo en el sur de Cali, pero yo pienso ir con mi novio. Pero mi novio no tiene vehículo, entonces nosotros pensamos irnos en transporte público. ¿Será que usted me puede hacer el favor de indicarle cómo ir?",
+        "timestamp": "2026-08-20T22:15:27.133Z"
+      },
+      {
+        "role": "assistant",
+        "content": "¡Claro que sí! 😊\n\nLa Aquarela está ubicada en el Km 5, Vía La Buitrera, Palmira, Valle del Cauca. Aunque no tengo detalles específicos sobre las rutas de transporte público, te recomiendo que tomes un bus o taxi que te lleve hacia la vía La Buitrera. Una vez cerca, puedes usar el siguiente enlace de Google Maps para guiarte directamente hasta nuestro restaurante: [Ubicación La Aquarela](https://www.google.com/maps/search/La+Aquarela+La+Buitrera+Palmira).\n\nEspero que disfruten su visita. Si necesitas más ayuda, no dudes en preguntar. 😊",
+        "timestamp": "2026-08-20T22:15:29.253Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: Niña, yo soy de Palmira y entonces yo quiero ir, pero yo no tengo transporte.",
+        "timestamp": "2026-08-20T22:17:08.888Z"
+      },
+      {
+        "role": "assistant",
+        "content": "¡No te preocupes! Si estás en Palmira y no tienes transporte propio, puedes considerar tomar un taxi o un servicio de transporte compartido que te lleve directamente a La Aquarela. Estamos ubicados en el Km 5, Vía La Buitrera, Palmira, Valle del Cauca. \n\nPara facilitar tu llegada, aquí tienes el enlace de Google Maps: [Ubicación La Aquarela](https://www.google.com/maps/search/La+Aquarela+La+Buitrera+Palmira). Esto te ayudará a guiarte hasta nuestro restaurante.\n\nSi tienes más preguntas o necesitas ayuda con una reserva, estoy aquí para ayudarte. 😊",
+        "timestamp": "2026-08-20T22:17:10.309Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: Niña, lo que pasa es que yo quiero una cena romántica, pero más que romántica quiero que sea de cumpleaños, es que es con mi mejor amiga.",
+        "timestamp": "2026-08-20T22:19:22.026Z"
+      },
+      {
+        "role": "assistant",
+        "content": "¡Qué bonito gesto para tu mejor amiga! 🎉 Podemos personalizar la Cena Romántica para que sea una celebración de cumpleaños especial. Incluiremos la decoración y la cena, y podemos agregar detalles que hagan que el cumpleaños sea memorable.\n\nSi deseas proceder con la reserva o necesitas más detalles sobre cómo personalizar el evento, por favor házmelo saber. Estoy aquí para ayudarte a planificar una celebración inolvidable. 😊",
+        "timestamp": "2026-08-20T22:19:23.404Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: Niña, para la cena romántica ustedes tienen esas letras grandotas y antochas y todo eso.",
+        "timestamp": "2026-08-20T22:20:10.332Z"
+      },
+      {
+        "role": "assistant",
+        "content": "Para la Cena Romántica, ofrecemos una decoración especial que incluye detalles encantadores para crear un ambiente íntimo y memorable. Sin embargo, no tengo información específica sobre letras grandes o antorchas. Podemos trabajar contigo para personalizar la decoración según tus preferencias y hacer que la celebración sea única.\n\nSi deseas ver fotos de las decoraciones o tienes alguna otra solicitud específica, por favor házmelo saber. Estoy aquí para ayudarte a planificar una noche especial. 😊",
+        "timestamp": "2026-08-20T22:20:11.863Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: Niña, lo que pasa es que yo ya hice la reserva, ¿cierto? A mí me encanta el lugar. Pero yo no quiero ni la losa de ustedes, ni los cubiertos de ustedes, ni los manteles de ustedes. Tengo que llevarlos si no me gustan los de ustedes.",
+        "timestamp": "2026-08-20T22:21:20.116Z"
+      },
+      {
+        "role": "assistant",
+        "content": "Entiendo que desees personalizar cada detalle de tu celebración. En La Aquarela, nuestro objetivo es hacer que tu experiencia sea lo más especial posible. Si prefieres traer tus propios manteles, cubiertos y vajilla, podemos coordinar para que todo esté a tu gusto.\n\nPor favor, asegúrate de comunicarte con nuestro equipo para coordinar estos detalles específicos y asegurarte de que todo esté preparado para tu llegada. Si necesitas más ayuda o información, no dudes en decírmelo. Estoy aquí para ayudarte. 😊",
+        "timestamp": "2026-08-20T22:21:21.800Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: Niña, lo que pasa es que yo la vez pasada fui y en los colmos había televisor, todavía tienen televisor.",
+        "timestamp": "2026-08-20T22:21:54.061Z"
+      },
+      {
+        "role": "assistant",
+        "content": "Sí, en la zona del Salón de Eventos contamos con un video beam, que es ideal para presentaciones o para disfrutar de contenido visual durante tu visita. Si estás interesado en una zona específica con televisor, te recomendaría verificar directamente con nuestro equipo para confirmar la disponibilidad y asegurarte de que se ajuste a tus necesidades.\n\nSi tienes más preguntas o necesitas ayuda con una reserva, estoy aquí para ayudarte. 😊",
+        "timestamp": "2026-08-20T22:21:55.523Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: los dos por uno en cócteles que día son y hasta qué hora",
+        "timestamp": "2026-08-20T22:22:20.491Z"
+      },
+      {
+        "role": "assistant",
+        "content": "Actualmente, no tengo información sobre promociones de 2x1 en cócteles en nuestra base de conocimientos. Sin embargo, te recomiendo que te pongas en contacto directamente con el restaurante para obtener información actualizada sobre promociones especiales.\n\nSi tienes más preguntas o necesitas ayuda con una reserva, estaré encantado de asistirte. 😊",
+        "timestamp": "2026-08-20T22:22:21.911Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: Niña, lo que pasa es que yo quiero llevar las sorpresas, las tortas de un día anterior, ¿lo puedo hacer?",
+        "timestamp": "2026-08-20T22:23:29.522Z"
+      },
+      {
+        "role": "assistant",
+        "content": "¡Claro que sí! Puedes traer tus propias tortas y sorpresas para tu evento especial. Solo asegúrate de coordinar con nuestro equipo para que todo esté listo y organizado para el día de tu celebración. \n\nSi deseas dejar estos elementos un día antes, te recomiendo que hables directamente con el restaurante para confirmar los detalles y asegurarte de que todo esté en orden.\n\nSi necesitas más ayuda o información, no dudes en decírmelo. Estoy aquí para ayudarte. 😊",
+        "timestamp": "2026-08-20T22:23:30.766Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: Niñas si yo hice la reserva y compré los platos fuertes, de todas maneras yo puedo acceder al parque temático.",
+        "timestamp": "2026-08-20T22:24:16.912Z"
+      },
+      {
+        "role": "assistant",
+        "content": "¡Por supuesto! Al consumir en el restaurante, tienes acceso gratuito a todo el Parque Temático. Esto incluye todas nuestras atracciones, como el tobogán de pelotas, deslizaderos, máquinas de arcades, y mucho más. Así que, al disfrutar de tus platos fuertes, también podrás disfrutar de todas las actividades del parque. 🎉\n\nSi tienes más preguntas o necesitas ayuda adicional, estoy aquí para asistirte. 😊",
+        "timestamp": "2026-08-20T22:24:18.414Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: Hola, ¿qué horarios comprende los 2x1 y qué platos fuertes son?",
+        "timestamp": "2026-08-20T22:25:36.787Z"
+      },
+      {
+        "role": "assistant",
+        "content": "¡Hola! La promoción 2x1 está disponible de lunes a viernes, todo el día, pero no aplica en días festivos. Para conocer los platos fuertes incluidos en esta promoción, te enviaré la información completa. [ENVIAR_PROMO_2X1] 😊",
+        "timestamp": "2026-08-20T22:25:38.355Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: ¿Niña en la zona SPA también hace masajes?",
+        "timestamp": "2026-08-20T22:26:00.806Z"
+      },
+      {
+        "role": "assistant",
+        "content": "La zona Spa en \"La Aquarela\" es un espacio privado que se puede alquilar por horas, pero no incluye servicios de masajes. Está diseñada para disfrutar de un ambiente relajante, pero los masajes no forman parte de los servicios ofrecidos. Si tienes alguna otra pregunta o necesitas más información, ¡estoy aquí para ayudarte! 😊",
+        "timestamp": "2026-08-20T22:26:02.227Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: Para entrar en el parque matemáticos, ¿cuál es el valor y si ustedes son preferibles?",
+        "timestamp": "2026-08-20T22:26:41.400Z"
+      },
+      {
+        "role": "assistant",
+        "content": "El ingreso al Parque Temático es totalmente gratis si consumes un plato fuerte por persona en el restaurante. Si prefieres no consumir en el restaurante, el costo de entrada es de $10,000 COP por persona. Si tienes más preguntas o necesitas ayuda con algo más, ¡estaré encantado de asistirte! 😊",
+        "timestamp": "2026-08-20T22:26:43.436Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: pollo a la misma escoteca",
+        "timestamp": "2026-08-20T22:26:57.576Z"
+      },
+      {
+        "role": "assistant",
+        "content": "Parece que hubo un pequeño error en la transcripción de tu mensaje. ¿Podrías aclarar o repetir tu pregunta? Estoy aquí para ayudarte con cualquier información que necesites sobre el restaurante o el parque temático. 😊",
+        "timestamp": "2026-08-20T22:26:58.732Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: ¿Yo puedo llevar a mi perro?",
+        "timestamp": "2026-08-20T22:27:11.814Z"
+      },
+      {
+        "role": "assistant",
+        "content": "¡Claro que sí! \"La Aquarela\" es un restaurante Pet Friendly, por lo que puedes traer a tu perro. Solo te pedimos que estés siempre pendiente de él, recojas sus heces y, si es necesario o es de raza fuerte, que lleve bozal en todo momento. Si tienes más preguntas, ¡no dudes en preguntar! 🐶😊",
+        "timestamp": "2026-08-20T22:27:19.027Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: ¿Ustedes son Pet Friendly?",
+        "timestamp": "2026-08-20T22:27:39.870Z"
+      },
+      {
+        "role": "assistant",
+        "content": "¡Sí, somos Pet Friendly! Puedes traer a tu mascota al restaurante. Solo te pedimos que estés siempre pendiente de ella, recojas sus heces y, si es necesario o es de raza fuerte, lleve bozal en todo momento. Si tienes más preguntas o necesitas más información, ¡estoy aquí para ayudarte! 🐾😊",
+        "timestamp": "2026-08-20T22:27:41.200Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: En qué zonas está el mesero personalizado o si no lo quiere adquirir no hay ningún problema",
+        "timestamp": "2026-08-20T22:28:09.874Z"
+      },
+      {
+        "role": "assistant",
+        "content": "El servicio de mesero personalizado es obligatorio en ciertas zonas y situaciones:\n\n1. Reservas de más de 20 personas.\n2. Reservas en la zona Lagos.\n3. Reservas en la zona Cosmos Grande (105).\n4. Reservas en el Salón de Eventos.\n\nEn otras zonas compartidas, como las Terrazas, no es necesario contratar un mesero personalizado, ya que cuentan con atención normal de meseros. Si tienes más preguntas o necesitas ayuda con una reserva, ¡déjame saber! 😊",
+        "timestamp": "2026-08-20T22:28:11.816Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: Yo quiero hacer una reserva en la zona Balcón, ¿cuál es el proceso?",
+        "timestamp": "2026-08-20T22:28:46.027Z"
+      },
+      {
+        "role": "assistant",
+        "content": "La zona del Balcón en \"La Aquarela\" no cuenta con servicio de mesa ni atención de meseros. Sin embargo, puedes hacer tu pedido directamente en la caja y llevártelo al Balcón para disfrutar de la vista. Si prefieres, también puedes consumir en otra zona y luego desplazarte al Balcón.\n\nSi deseas hacer una reserva en otra zona o necesitas más información, ¡estaré encantado de ayudarte! 😊",
+        "timestamp": "2026-08-20T22:28:47.552Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: Yo estoy en el condominio Acuarela, quiero hacer un domicilio, ¿se puede hacer?",
+        "timestamp": "2026-08-20T22:29:16.638Z"
+      },
+      {
+        "role": "assistant",
+        "content": "Actualmente, \"La Aquarela\" no cuenta con servicio de domicilios fuera del sector de La Buitrera. Si te encuentras dentro de La Buitrera, puedes hacer tu pedido llamando a los números +57 321 8149000 o +57 305 3373813. Si tienes más preguntas o necesitas ayuda adicional, ¡estoy aquí para asistirte! 😊",
+        "timestamp": "2026-08-20T22:29:18.070Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: Tengo varias preguntas. La primera, necesito hacer un fotoestudio a mi hija que va a ser de los 15 años. ¿Cuánto debo pagar? ¿Ustedes tienen piscina? ¿Tienen río?",
+        "timestamp": "2026-08-20T22:30:17.847Z"
+      },
+      {
+        "role": "assistant",
+        "content": "¡Claro! Aquí tienes la información que necesitas:\n\n1. **Fotoestudio:** Para realizar un fotoestudio en el restaurante, los asistentes deben consumir un plato fuerte por persona o pagar un valor de $10,000 COP por persona. El fotógrafo no paga ingreso.\n\n2. **Piscina:** Tenemos una piscina llamada \"Piscilago\", que es un cuerpo de agua de 40 cm de profundidad, de uso exclusivo para niños bajo la vigilancia de un adulto responsable.\n\n3. **Río:** Hay un río cerca de \"La Aquarela\", pero pertenece a la CBC (Corporación Autónoma Regional del Valle del Cauca). Es decisión del usuario si desea ingresar al río; sin embargo, el restaurante no se hace responsable por accidentes o daños a terceros.\n\nSi tienes más preguntas o necesitas más información, ¡estaré encantado de ayudarte! 😊",
+        "timestamp": "2026-08-20T22:30:20.940Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: ¿Cuánto cuesta el agua de pesca?",
+        "timestamp": "2026-08-20T22:30:24.386Z"
+      },
+      {
+        "role": "assistant",
+        "content": "El costo para pescar en el lago de pesca deportiva de \"La Aquarela\" es de $12,000 COP por libra. Puedes pescar cachama, trucha o tilapia roja. Si tienes más preguntas o necesitas más información, ¡no dudes en preguntar! 🎣😊",
+        "timestamp": "2026-08-20T22:30:25.393Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: ¿Ustedes sirven para Pentecostes?",
+        "timestamp": "2026-08-20T22:30:55.354Z"
+      },
+      {
+        "role": "assistant",
+        "content": "¡Hola! \"La Aquarela\" está abierta todos los días de 7:30 AM a 10:00 PM, por lo que puedes visitarnos durante el Pentecostés. Si tienes algún evento especial en mente o necesitas hacer una reserva, estaré encantado de ayudarte con los detalles. 😊",
+        "timestamp": "2026-08-20T22:30:56.509Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: Si yo quiera hacer una reserva con el menú especial para eventos puedo hacerlo en dos partes o todo el menú debe ser igual.",
+        "timestamp": "2026-08-20T22:31:26.484Z"
+      },
+      {
+        "role": "assistant",
+        "content": "Para el **Menú Especial**, que aplica solo para grupos de 20 personas en adelante, se maneja una única opción de menú para todo el grupo. Esto significa que todos los asistentes deben disfrutar del mismo menú. Además, este menú requiere reserva previa, pre-orden y un abono del 50% con un mínimo de 4 días de anticipación.\n\nSi deseas proceder con la reserva o tienes más preguntas, ¡estoy aquí para ayudarte! 😊",
+        "timestamp": "2026-08-20T22:31:27.834Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: Yo voy a llegar de pronto después de las 11 de la mañana, ya tengo reserva para unos desayunos dos por uno Me los pueden servir después de esa hora",
+        "timestamp": "2026-08-20T22:31:58.990Z"
+      },
+      {
+        "role": "assistant",
+        "content": "Lo siento, pero la promoción o servicio de desayunos en \"La Aquarela\" finaliza estrictamente a las 11:00 AM. Después de esta hora, la cocina comienza a preparar exclusivamente los platos fuertes de almuerzo. \n\nSi llegas después de las 11:00 AM, te recomendaría disfrutar de nuestra carta abierta para el almuerzo. Si tienes más preguntas o necesitas ayuda con algo más, ¡déjame saber! 😊",
+        "timestamp": "2026-08-20T22:32:00.628Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: Llega a ser una cena romántica en la zona SPA. ¿Cuánto cuesta?",
+        "timestamp": "2026-08-20T22:32:22.187Z"
+      },
+      {
+        "role": "assistant",
+        "content": "La **Cena Romántica** en \"La Aquarela\" incluye decoración, cena, bebidas, cócteles y una zona privada, y tiene un valor de $253,000 COP por una duración de 2 horas. \n\nSi estás interesado en un paquete más completo, el **Paquete de Pareja (Spa)** ofrece una experiencia de 4 horas exclusiva para parejas, que incluye cena, comida, bebidas, cócteles, decoración y uso del jacuzzi, por un valor de $390,000 COP.\n\nSi deseas hacer una reserva o necesitas más información, ¡estaré encantado de ayudarte! 😊",
+        "timestamp": "2026-08-20T22:32:24.007Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: Se manejan fiestas así, ¿ves?",
+        "timestamp": "2026-08-20T22:32:50.173Z"
+      },
+      {
+        "role": "assistant",
+        "content": "¡Sí, en \"La Aquarela\" manejamos eventos especiales y fiestas! Por ejemplo, celebramos la Fiesta de San Silvestre el 31 de diciembre con banda en vivo, menú especial, uvas, brindis, muñeco de año viejo y fuegos pirotécnicos. También puedes organizar eventos personalizados como cumpleaños, aniversarios y más.\n\nSi tienes un evento en mente o necesitas más información sobre cómo organizarlo, ¡estaré encantado de ayudarte a planificarlo! 🎉😊",
+        "timestamp": "2026-08-20T22:32:51.982Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: ¿Cuál es el menú especial de ustedes?",
+        "timestamp": "2026-08-20T22:32:53.631Z"
+      },
+      {
+        "role": "assistant",
+        "content": "El **Menú Especial** en \"La Aquarela\" tiene un costo de $30,000 por persona y aplica solo para grupos de 20 personas en adelante. Este menú se maneja únicamente con reserva previa, y es necesario realizar la pre-orden y el abono del 50% con un mínimo de 4 días de anticipación.\n\nSi deseas más detalles o estás interesado en realizar una reserva, ¡déjame saber y te ayudaré con gusto! 😊",
+        "timestamp": "2026-08-20T22:32:55.053Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: ¿Cómo se llaman las zonas del restaurante y si tienes fotos?",
+        "timestamp": "2026-08-20T22:34:27.216Z"
+      },
+      {
+        "role": "assistant",
+        "content": "Claro, aquí tienes las zonas del restaurante \"La Aquarela\":\n\n1. **Zonas Compartidas (Sin costo de alquiler, solo consumo):**\n   - Terrazas: Aire, Fuego, Tierra, Agua\n   - Salón de Eventos\n\n2. **Zonas Especiales y Privadas (Con costo de alquiler):**\n   - Lagos\n   - Zonas Cosmos Pequeñas (103 y 104)\n   - Zona Cosmos Grande (105)\n   - Zona Spa\n\n3. **Zona Balcón (Sin servicio de mesa):**\n   - El Balcón\n\nSi deseas ver fotos de alguna de estas zonas, por favor indícame cuál te interesa y te enviaré las imágenes correspondientes. 😊",
+        "timestamp": "2026-08-20T22:34:29.059Z"
+      },
+      {
+        "role": "user",
+        "content": "🎤 [Audio]: ¿Qué valor tiene la Cosmo 103?",
+        "timestamp": "2026-08-20T22:34:44.829Z"
+      },
+      {
+        "role": "assistant",
+        "content": "La **Zona Cosmos Pequeña (103)** tiene un costo de alquiler por horas de:\n\n- 1 hora: $50,000 COP\n- 2 horas: $70,000 COP\n- 3 horas: $80,000 COP\n\nEn esta zona, los pedidos se pueden realizar directamente por medio del teléfono oprimiendo el número 0, y no requiere mesero personalizado.\n\nSi deseas hacer una reserva o necesitas más información, ¡estoy aquí para ayudarte! 😊",
+        "timestamp": "2026-08-20T22:34:46.774Z"
+      },
+      {
+        "role": "user",
+        "content": "🌈 ¡Bienvenidos a La Aquarela! 🐦🎨\n\nHola 👋, es un placer recibirte. Soy Aquarela, y te invitamos a sumergirte en una experiencia única donde el color, el sabor y la diversión se unen para crear momentos inolvidables.\n\n🕖 HORARIOS\n\nTodos los días: 7 am a 11 de la noche.\nAtención telefónica: 8:00 am a 12:00 medio día y de 2 pm a 6 pm.\n\n🌳 NUESTROS ESPACIOS\nEn La Aquarela encontrarás:\n\nJuegos infantiles 🧸\nLa granja de Junior 🐄              Lago de pesca",
+        "timestamp": "2026-08-20T22:45:26.698Z"
+      },
+      {
+        "role": "assistant",
+        "content": "¡Hola! 😊 Bienvenido a La Aquarela, donde la diversión y el sabor se combinan para ofrecerte una experiencia inolvidable. \n\nNuestros espacios incluyen juegos infantiles, una granja, y un lago de pesca, entre otros. Estamos abiertos todos los días de 7:30 a.m. a 10:00 p.m. Si necesitas más información o deseas hacer una reserva, estoy aquí para ayudarte. ¿En qué puedo asistirte hoy? 🌟",
+        "timestamp": "2026-08-20T22:45:28.921Z"
+      }
+    ],
+    "lastUpdated": "2026-08-20T22:45:28.921Z",
+    "aiPaused": false
+  },
+  "573126868728": {
+    "phone": "573126868728",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hola",
+        "timestamp": "2026-08-20T21:19:51.744Z"
+      },
+      {
+        "role": "assistant",
+        "content": "¡Hola! Bienvenido al Restaurante y Parque Temático \"La Aquarela\". ¿En qué puedo ayudarte hoy? 😊",
+        "timestamp": "2026-08-20T21:19:52.858Z"
+      },
+      {
+        "role": "user",
+        "content": "En una reserva",
+        "timestamp": "2026-08-20T21:20:55.945Z"
+      },
+      {
+        "role": "assistant",
+        "content": "¡Perfecto! Para ayudarte con la reserva, necesitaré algunos detalles:\n\n1. Nombre completo.\n2. Día y hora deseada.\n3. Cantidad de personas.\n4. Zona deseada.\n5. Tipo de evento y si hay algún motivo especial a celebrar.\n6. Decoración elegida y pre-orden de platos (si aplica).\n7. Informar alergias o necesidad de silla de ruedas.\n\nUna vez que me proporciones esta información, te guiaré con el proceso de pago para confirmar la reserva. 😊",
+        "timestamp": "2026-08-20T21:20:58.391Z"
+      },
+      {
+        "role": "user",
+        "content": "¡Perfecto! Para ayudarte con la reserva, necesitaré algunos detalles:\n\n1. Juky zaa\n2. 21/8/2026\n3. 2\n4. Aire\n5. Cumple\n6. Envíame catalogo de decoración \n7. Pimentón \n\nUna vez que me proporciones esta información, te guiaré con el proceso de pago para confirmar la reserva. 😊",
+        "timestamp": "2026-08-20T21:22:42.547Z"
+      },
+      {
+        "role": "assistant",
+        "content": "¡Gracias por la información, Juky! 🎉\n\nTe enviaré el catálogo de decoraciones para que puedas elegir la que más te guste. [ENVIAR_FOTO_DECORACIONES]\n\nUna vez que hayas elegido la decoración, házmelo saber para continuar con el proceso de reserva. 😊",
+        "timestamp": "2026-08-20T21:22:44.023Z"
+      },
+      {
+        "role": "user",
+        "content": "Bouquete plus",
+        "timestamp": "2026-08-20T21:23:43.880Z"
+      },
+      {
+        "role": "assistant",
+        "content": "¡Excelente elección! Ahora que has seleccionado la decoración \"Bouquete Plus\", procederemos con el siguiente paso.\n\nPara confirmar tu reserva, necesitarás realizar un pago anticipado del 50% de la cuenta. Te enviaré los datos bancarios para que puedas hacer el pago. [ENVIAR_DATOS_PAGO]\n\nUna vez realizado el pago, por favor envíame el soporte para finalizar la reserva. Si tienes alguna otra pregunta o necesitas más ayuda, ¡aquí estoy! 😊",
+        "timestamp": "2026-08-20T21:23:46.424Z"
+      },
+      {
+        "role": "user",
+        "content": "Gracias",
+        "timestamp": "2026-08-20T21:24:11.644Z"
+      },
+      {
+        "role": "assistant",
+        "content": "¡De nada! Si necesitas más ayuda o tienes alguna otra pregunta, no dudes en decírmelo. ¡Espero que disfrutes de tu celebración en La Aquarela! 🎉😊",
+        "timestamp": "2026-08-20T21:24:12.845Z"
+      },
+      {
+        "role": "user",
+        "content": "📷 [Imagen recibida]",
+        "timestamp": "2026-08-20T21:24:28.195Z",
+        "mediaUrl": "/uploads/whatsapp_media_807931015712148.jpg",
+        "mediaType": "image"
+      },
+      {
+        "role": "assistant",
+        "content": "¡Gracias por compartir la imagen! Si necesitas más ayuda o tienes alguna pregunta adicional, estaré encantado de asistirte. 😊",
+        "timestamp": "2026-08-20T21:24:29.515Z"
+      },
+      {
+        "role": "user",
+        "content": "Consignación de Decoración",
+        "timestamp": "2026-08-20T21:24:33.328Z"
+      },
+      {
+        "role": "assistant",
+        "content": "¡Perfecto! Una vez que hayas realizado la consignación para la decoración, por favor envíame el soporte de pago para proceder con la confirmación de tu reserva. Si necesitas más información o tienes alguna pregunta, aquí estoy para ayudarte. 😊",
+        "timestamp": "2026-08-20T21:24:35.167Z"
+      },
+      {
+        "role": "user",
+        "content": "Cena romántica",
+        "timestamp": "2026-08-20T21:25:00.905Z"
+      },
+      {
+        "role": "assistant",
+        "content": "¡La cena romántica es una excelente opción! Incluye decoración, cena, bebidas, cócteles y una zona privada por un valor de $253,000, con una duración de 2 horas.\n\nSi deseas reservar esta experiencia, por favor indícame la fecha y hora deseada, así como cualquier detalle adicional que quieras incluir. Una vez que tenga esta información, te guiaré con el proceso de pago para confirmar la reserva. 😊",
+        "timestamp": "2026-08-20T21:25:02.717Z"
+      },
+      {
+        "role": "user",
+        "content": "Envíame fotos de espacios",
+        "timestamp": "2026-08-20T21:25:39.931Z"
+      },
+      {
+        "role": "assistant",
+        "content": "Claro, puedo enviarte fotos de los diferentes espacios del restaurante. Por favor, indícame de cuál de las siguientes zonas te gustaría ver fotos:\n\n- Terrazas (Aire, Juego, Tierra, Agua)\n- Lagos\n- Salón de Eventos\n- Zonas Cosmos / Cosmos 105\n\nUna vez que me digas, te enviaré las fotos correspondientes. 😊",
+        "timestamp": "2026-08-20T21:25:42.015Z"
+      },
+      {
+        "role": "user",
+        "content": "Agua",
+        "timestamp": "2026-08-20T21:25:51.474Z"
+      },
+      {
+        "role": "assistant",
+        "content": "¡Perfecto! Te enviaré las fotos de la Terraza Agua para que puedas ver cómo es. [ENVIAR_FOTOS]agua\n\nSi necesitas más información o tienes alguna otra pregunta, aquí estoy para ayudarte. 😊",
+        "timestamp": "2026-08-20T21:25:53.308Z"
+      }
+    ],
+    "lastUpdated": "2026-08-20T21:25:53.308Z",
+    "aiPaused": false
+  }
+}
