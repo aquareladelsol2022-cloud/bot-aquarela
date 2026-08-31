@@ -166,7 +166,14 @@ Bebidas y acompañamientos
 
     // 1. Enviar el texto principal
     if (aiResponse.length > 0) {
-        await sendWhatsAppMessage(from, aiResponse);
+        try {
+            await msg.reply(aiResponse);
+            console.log(`Mensaje enviado a ${from}`);
+        } catch (e) {
+            console.error('Error usando msg.reply:', e);
+            // Fallback
+            await sendWhatsAppMessage(from, aiResponse);
+        }
     }
 
     // 2. Enviar archivos adjuntos si los hay
@@ -174,7 +181,7 @@ Bebidas y acompañamientos
         const pdfPath = path.join(process.cwd(), 'menu.pdf');
         if (fs.existsSync(pdfPath)) {
             const media = MessageMedia.fromFilePath(pdfPath);
-            await whatsappClient.sendMessage(from, media, { caption: 'Aquí tienes nuestro menú en PDF.', sendMediaAsDocument: true });
+            await msg.reply(media, undefined, { caption: 'Aquí tienes nuestro menú en PDF.', sendMediaAsDocument: true });
         }
     }
 
@@ -182,7 +189,7 @@ Bebidas y acompañamientos
         const imgPath = path.join(process.cwd(), 'decoraciones.jpg');
         if (fs.existsSync(imgPath)) {
             const media = MessageMedia.fromFilePath(imgPath);
-            await whatsappClient.sendMessage(from, media, { caption: '¡Conoce nuestras espectaculares opciones de decoración! 🎉' });
+            await msg.reply(media, undefined, { caption: '¡Conoce nuestras espectaculares opciones de decoración! 🎉' });
         }
     }
 
@@ -194,9 +201,9 @@ Bebidas y acompañamientos
                 for (const file of files) {
                     const imgPath = path.join(folderPath, file);
                     const media = MessageMedia.fromFilePath(imgPath);
-                    await whatsappClient.sendMessage(from, media);
+                    await msg.reply(media);
                 }
-                await sendWhatsAppMessage(from, '¡Mira qué hermosas son nuestras instalaciones! 🤩');
+                await msg.reply('¡Mira qué hermosas son nuestras instalaciones! 🤩');
             }
         }
     }
