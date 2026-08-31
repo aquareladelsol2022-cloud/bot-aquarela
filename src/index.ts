@@ -5,7 +5,7 @@ import express from 'express';
 import { getAiResponse, transcribeAudio } from './services/ai.service';
 import { sock, initWhatsAppClient, sendWhatsAppMessage, downloadWhatsAppMedia } from './services/whatsapp.service';
 import { guardarReservaCSV } from './services/reservas.service';
-import { agregarEventoCalendario } from './services/calendario.service';
+import { agregarEventoCalendario } from './services/calendar.service';
 
 dotenv.config();
 
