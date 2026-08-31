@@ -77,8 +77,7 @@ export const downloadWhatsAppMedia = async (msg: any): Promise<string | null> =>
         const buffer = await downloadMediaMessage(
             msg,
             'buffer',
-            { },
-            { logger: pino({ level: 'silent' }) as any }
+            { }
         );
         
         if (!buffer) return null;
