@@ -17,17 +17,31 @@ app.listen(port, () => console.log(`Servidor web escuchando en el puerto ${port}
 
 const handleMessage = async (msg: any) => {
     try {
+        const fromMe = msg.key.fromMe;
         const from = msg.key.remoteJid;
         const phoneNumber = from.split('@')[0];
 
+        if (fromMe) {
+            console.log(`Mensaje enviado por mí (ignorado): ${from}`);
+            return;
+        }
+
+        // Desenvolver mensajes efímeros o de ver una vez
+        let actualMessage = msg.message;
+        if (actualMessage?.ephemeralMessage) {
+            actualMessage = actualMessage.ephemeralMessage.message;
+        } else if (actualMessage?.viewOnceMessageV2) {
+            actualMessage = actualMessage.viewOnceMessageV2.message;
+        }
+
         let msgBody = '';
-        let messageType = Object.keys(msg.message || {})[0];
+        let messageType = Object.keys(actualMessage || {})[0];
         
         // Manejar mensajes que vienen de botones o citas
         if (messageType === 'extendedTextMessage') {
-            msgBody = msg.message.extendedTextMessage.text;
+            msgBody = actualMessage.extendedTextMessage?.text;
         } else if (messageType === 'conversation') {
-            msgBody = msg.message.conversation;
+            msgBody = actualMessage.conversation;
         } else if (messageType === 'audioMessage') {
             console.log(`Recibido audio de ${phoneNumber}. Transcribiendo...`);
             const audioPath = await downloadWhatsAppMedia(msg);

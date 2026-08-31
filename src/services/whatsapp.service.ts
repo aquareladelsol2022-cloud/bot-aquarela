@@ -45,9 +45,11 @@ export const initWhatsAppClient = async (onMessageReceived: (msg: any) => Promis
 
     // Listen to messages
     sock.ev.on('messages.upsert', async (m: any) => {
+        console.log('EVENTO UPSERT RECIBIDO:', JSON.stringify(m, null, 2));
         if (m.type === 'notify') {
             for (const msg of m.messages) {
-                if (!msg.key.fromMe && msg.message) {
+                console.log('Procesando mensaje:', msg.key.remoteJid, 'fromMe:', msg.key.fromMe);
+                if (msg.message) {
                     await onMessageReceived(msg);
                 }
             }
@@ -61,10 +63,13 @@ export const initWhatsAppClient = async (onMessageReceived: (msg: any) => Promis
 export const sendWhatsAppMessage = async (to: string, body: string) => {
     try {
         const chatId = to.includes('@s.whatsapp.net') ? to : `${to.replace('@c.us', '')}@s.whatsapp.net`;
+        console.log(`[Baileys] Intentando enviar mensaje a: ${chatId}`);
+        console.log(`[Baileys] Contenido del mensaje (primeros 50 chars): ${body.substring(0, 50)}...`);
+        
         await sock.sendMessage(chatId, { text: body });
-        console.log(`Mensaje enviado a ${to}`);
+        console.log(`[Baileys] ¡Mensaje enviado con éxito a ${chatId}!`);
     } catch (error: any) {
-        console.error('Error enviando mensaje WhatsApp:', error);
+        console.error(`[Baileys] Error crítico al enviar a ${to}:`, error);
         fs.appendFileSync('whatsapp_error.log', new Date().toISOString() + ' - Error sending text message: ' + JSON.stringify(error) + '\n');
     }
 };
