@@ -17,6 +17,8 @@ export const initWhatsAppClient = () => {
         console.log('\n=========================================');
         console.log('ESCANEA ESTE CÓDIGO QR PARA INICIAR SESIÓN EN WHATSAPP:');
         qrcode.generate(qr, { small: true });
+        console.log('\nSi el cdigo de arriba se ve cortado o con lneas, haz clic en este enlace para verlo perfecto:');
+        console.log('https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=' + encodeURIComponent(qr));
         console.log('=========================================\n');
     });
 
