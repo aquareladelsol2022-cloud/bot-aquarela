@@ -225,7 +225,7 @@ Bebidas y acompañamientos
         }
 
         if (sendsZonaFoto) {
-            const folderPath = path.join(process.cwd(), 'media', sendsZonaFoto);
+            const folderPath = path.join(process.cwd(), sendsZonaFoto);
             if (fs.existsSync(folderPath) && fs.statSync(folderPath).isDirectory()) {
                 const files = fs.readdirSync(folderPath).filter(f => f.match(/\.(jpg|jpeg|png)$/i)).slice(0, 10);
                 if (files.length > 0) {
