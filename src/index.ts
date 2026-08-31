@@ -1,6 +1,7 @@
 import dotenv from 'dotenv';
 import fs from 'fs';
 import path from 'path';
+import express from 'express';
 import { getAiResponse, transcribeAudio } from './services/ai.service';
 import { whatsappClient, initWhatsAppClient, sendWhatsAppMessage, downloadWhatsAppMedia } from './services/whatsapp.service';
 import { guardarReservaCSV } from './services/reservas.service';
@@ -8,6 +9,12 @@ import { agregarEventoCalendario } from './services/calendar.service';
 import { MessageMedia } from 'whatsapp-web.js';
 
 dotenv.config();
+
+// Iniciar un servidor Express en el puerto de Railway para que mantenga el contenedor VIVO
+const app = express();
+const port = process.env.PORT || 3000;
+app.get('/', (req, res) => res.send('Bot de La Aquarela está vivo y corriendo.'));
+app.listen(port, () => console.log(`Servidor web escuchando en el puerto ${port}`));
 
 // Inicializar el cliente de WhatsApp Web (generará el código QR en consola)
 initWhatsAppClient();
