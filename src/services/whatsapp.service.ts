@@ -62,7 +62,13 @@ export const initWhatsAppClient = async (onMessageReceived: (msg: any) => Promis
  */
 export const sendWhatsAppMessage = async (to: string, body: string) => {
     try {
-        const chatId = to.includes('@s.whatsapp.net') ? to : `${to.replace('@c.us', '')}@s.whatsapp.net`;
+        // Si ya tiene un @, lo dejamos como está (ej. @lid, @g.us, @s.whatsapp.net). Si tiene @c.us lo cambiamos. Si no tiene, agregamos @s.whatsapp.net
+        let chatId = to;
+        if (to.includes('@c.us')) {
+            chatId = to.replace('@c.us', '@s.whatsapp.net');
+        } else if (!to.includes('@')) {
+            chatId = `${to}@s.whatsapp.net`;
+        }
         console.log(`[Baileys] Intentando enviar mensaje a: ${chatId}`);
         console.log(`[Baileys] Contenido del mensaje (primeros 50 chars): ${body.substring(0, 50)}...`);
         
