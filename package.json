@@ -23,7 +23,8 @@
     "ngrok": "^5.0.0-beta.2",
     "openai": "^6.45.0",
     "qrcode-terminal": "^0.12.0",
-    "whatsapp-web.js": "github:pedroslopez/whatsapp-web.js#main"
+    "@whiskeysockets/baileys": "^6.7.7",
+    "pino": "^9.3.2"
   },
   "devDependencies": {
     "@types/express": "^5.0.6",
