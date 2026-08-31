@@ -164,7 +164,7 @@ Bebidas y acompañamientos
 
     // 2. Enviar archivos adjuntos si los hay
     if (sendsPdf) {
-        const pdfPath = path.join(__dirname, '../menu.pdf');
+        const pdfPath = path.join(process.cwd(), 'menu.pdf');
         if (fs.existsSync(pdfPath)) {
             const media = MessageMedia.fromFilePath(pdfPath);
             await whatsappClient.sendMessage(from, media, { caption: 'Aquí tienes nuestro menú en PDF.', sendMediaAsDocument: true });
@@ -172,7 +172,7 @@ Bebidas y acompañamientos
     }
 
     if (sendsDecoraciones) {
-        const imgPath = path.join(__dirname, '../decoraciones.jpg');
+        const imgPath = path.join(process.cwd(), 'decoraciones.jpg');
         if (fs.existsSync(imgPath)) {
             const media = MessageMedia.fromFilePath(imgPath);
             await whatsappClient.sendMessage(from, media, { caption: '¡Conoce nuestras espectaculares opciones de decoración! 🎉' });
@@ -180,7 +180,7 @@ Bebidas y acompañamientos
     }
 
     if (sendsZonaFoto) {
-        const folderPath = path.join(__dirname, '../media', sendsZonaFoto);
+        const folderPath = path.join(process.cwd(), 'media', sendsZonaFoto);
         if (fs.existsSync(folderPath) && fs.statSync(folderPath).isDirectory()) {
             const files = fs.readdirSync(folderPath).filter(f => f.match(/\.(jpg|jpeg|png)$/i)).slice(0, 4);
             if (files.length > 0) {

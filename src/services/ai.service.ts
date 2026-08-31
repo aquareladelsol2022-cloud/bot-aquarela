@@ -10,7 +10,7 @@ const openai = new OpenAI({
 });
 
 // Load the knowledge base
-const knowledgeBasePath = path.join(__dirname, '../knowledge_base.md');
+const knowledgeBasePath = path.join(process.cwd(), 'knowledge_base.md');
 let knowledgeBase = '';
 try {
   knowledgeBase = fs.readFileSync(knowledgeBasePath, 'utf8');
