@@ -19,9 +19,9 @@ app.listen(port, () => console.log(`Servidor web escuchando en el puerto ${port}
 // Inicializar el cliente de WhatsApp Web (generará el código QR en consola)
 initWhatsAppClient();
 
-whatsappClient.on('message', async (msg) => {
-    // Ignorar mensajes de estados
-    if (msg.isStatus) return;
+whatsappClient.on('message_create', async (msg) => {
+    // Ignorar mensajes enviados por nosotros mismos o estados
+    if (msg.fromMe || msg.isStatus) return;
 
     const from = msg.from; // formato: numero@c.us
     const phoneNumber = from.split('@')[0] || from;
