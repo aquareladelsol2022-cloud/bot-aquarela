@@ -226,7 +226,13 @@ Bebidas y acompañamientos
 
         if (sendsZonaFoto) {
             const folderPath = path.join(process.cwd(), sendsZonaFoto);
-            if (fs.existsSync(folderPath) && fs.statSync(folderPath).isDirectory()) {
+            console.log(`[DEBUG FOTOS] El cliente pidió fotos de: ${sendsZonaFoto}`);
+            console.log(`[DEBUG FOTOS] Buscando carpeta en la ruta: ${folderPath}`);
+            
+            const existe = fs.existsSync(folderPath);
+            console.log(`[DEBUG FOTOS] ¿La carpeta existe en el servidor (Railway)?: ${existe}`);
+            
+            if (existe && fs.statSync(folderPath).isDirectory()) {
                 const files = fs.readdirSync(folderPath).filter(f => f.match(/\.(jpg|jpeg|png)$/i)).slice(0, 10);
                 if (files.length > 0) {
                     for (const file of files) {
