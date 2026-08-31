@@ -41,6 +41,7 @@ Reglas generales de tu personalidad:
    - **Preguntas obligatorias**: Debes preguntarle si celebran un motivo especial, si desean algún tipo de decoración, en qué zona desean ubicarse, si hay personas alérgicas y si requieren silla de ruedas.
    (NUNCA confirmes una reserva sin tener los datos básicos y haber hecho estas preguntas).
    Una vez tengas todo claro, diles que deben abonar el 50% para confirmar y usa [ENVIAR_DATOS_PAGO].
+   Solo cuando te envíen el comprobante de pago, confirma la reserva e incluye al final de tu mensaje EXACTAMENTE esto: [RESERVA_TRIGGER] {"nombre": "Juan Perez", "fecha_hora": "2026-10-25T15:00:00-05:00", "personas": 4, "detalles": "Alergia al maní"}
 9. SI el cliente quiere ver FOTOS de alguna de las ZONAS del restaurante, incluye EXACTAMENTE esta palabra oculta en tu respuesta: [ENVIAR_FOTOS]nombre_de_la_carpeta (Sustituyendo nombre_de_la_carpeta por la carpeta correspondiente de la base de conocimientos, ej. agua).
    **REGLA CRÍTICA**: Si el cliente te pide fotos, NUNCA llames a la herramienta de reservas. Tu única acción debe ser usar el texto [ENVIAR_FOTOS].
 10. SI el cliente pregunta por la promoción 2x1, incluye EXACTAMENTE esta palabra oculta en tu respuesta: [ENVIAR_PROMO_2X1]. ¡NO intentes dictar los platos tú mismo!
@@ -90,26 +91,6 @@ export const getAiResponse = async (message: string, phone: string): Promise<str
       model: 'gpt-4o-mini', // Changed to mini for extreme cost savings (~99% cheaper)
       messages: messagesWithContext as any,
       temperature: 0.2, // Low temperature for factual consistency con la knowledge base
-      tools: [
-        {
-          type: 'function',
-          function: {
-            name: 'guardar_reserva',
-            description: 'CRÍTICO: Llama a esta función EXCLUSIVAMENTE cuando el cliente haya confirmado explícitamente que desea hacer una reserva y te haya proporcionado un Nombre Real de Persona, Fecha, Hora y Número de Personas. NUNCA llames a esta función si el cliente solo está pidiendo fotos, información o el menú. No asumas nombres (ej. "parqueadero" no es un nombre).',
-            parameters: {
-              type: 'object',
-              properties: {
-                nombre: { type: 'string', description: 'Nombre completo del cliente' },
-                fecha_hora: { type: 'string', description: 'La fecha y hora en formato estricto ISO 8601 para la zona horaria de Colombia (ej. 2026-10-25T15:00:00-05:00)' },
-                personas: { type: 'number', description: 'Número total de personas que asistirán' },
-                detalles: { type: 'string', description: 'Detalles adicionales, decoración, o alergias. (Vacio si no hay)' }
-              },
-              required: ['nombre', 'fecha_hora', 'personas']
-            }
-          }
-        }
-      ],
-      tool_choice: 'auto'
     });
 
     const aiMessage = response.choices[0]?.message;
@@ -121,27 +102,15 @@ export const getAiResponse = async (message: string, phone: string): Promise<str
        }
     }
     
-    // Si la IA decide llamar a la herramienta de reserva
-    if (aiMessage?.tool_calls && aiMessage.tool_calls.length > 0) {
-      const toolCall: any = aiMessage.tool_calls[0];
-      if (toolCall?.function?.name === 'guardar_reserva') {
-        const args = toolCall.function.arguments;
-        
-        // Inyectamos en la memoria que la reserva ya fue exitosa, para que no vuelva a llamar a la función en el próximo mensaje
+    // Check if the AI output the JSON block for reservation directly
+    if (aiMessage?.content && aiMessage.content.includes('[RESERVA_TRIGGER]')) {
+        // Inyectamos en la memoria que la reserva ya fue exitosa
         if (conversations[phone]) {
-          conversations[phone].push({ 
-             role: 'assistant', 
-             content: '¡Perfecto! Tu reserva ha sido confirmada con éxito. Te esperamos.' 
-          });
           conversations[phone].push({
              role: 'system',
-             content: 'CRÍTICO: Ya has realizado la reserva para este cliente exitosamente. NO vuelvas a llamar a la herramienta guardar_reserva bajo ninguna circunstancia, a menos que el cliente pida explícitamente cambiar o actualizar los datos.'
+             content: 'CRÍTICO: Ya has realizado la reserva para este cliente exitosamente. NO vuelvas a enviar el bloque [RESERVA_TRIGGER].'
           });
         }
-
-        // Retornamos un trigger especial para que index.ts lo procese
-        return `[RESERVA_TRIGGER]${args}`;
-      }
     }
 
     return aiMessage?.content || 'Lo siento, tuve un problema procesando tu mensaje.';
