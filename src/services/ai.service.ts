@@ -95,7 +95,7 @@ export const getAiResponse = async (message: string, phone: string): Promise<str
           type: 'function',
           function: {
             name: 'guardar_reserva',
-            description: 'Llama a esta función EXCLUSIVAMENTE cuando el cliente haya confirmado que desea reservar y ya te haya proporcionado Nombre, Fecha, Hora y Número de Personas.',
+            description: 'CRÍTICO: Llama a esta función EXCLUSIVAMENTE cuando el cliente haya confirmado explícitamente que desea hacer una reserva y te haya proporcionado un Nombre Real de Persona, Fecha, Hora y Número de Personas. NUNCA llames a esta función si el cliente solo está pidiendo fotos, información o el menú. No asumas nombres (ej. "parqueadero" no es un nombre).',
             parameters: {
               type: 'object',
               properties: {
