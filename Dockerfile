@@ -2,7 +2,7 @@ FROM node:20
 
 # Install Chromium and dependencies for puppeteer
 RUN apt-get update \
-    && apt-get install -y chromium \
+    && apt-get install -y chromium git \
     fonts-ipafont-gothic fonts-wqy-zenhei fonts-thai-tlwg fonts-kacst fonts-freefont-ttf libxss1 \
     --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
