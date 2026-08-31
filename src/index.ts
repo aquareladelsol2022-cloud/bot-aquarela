@@ -15,15 +15,34 @@ const port = process.env.PORT || 3000;
 app.get('/', (req, res) => res.send('Bot de La Aquarela está vivo y corriendo con Baileys.'));
 app.listen(port, () => console.log(`Servidor web escuchando en el puerto ${port}`));
 
+// Memoria temporal para pausar el bot si un humano interviene
+const humanTakeover: Record<string, number> = {};
+const TAKEOVER_TIMEOUT_MS = 30 * 60 * 1000; // 30 minutos de pausa
+
 const handleMessage = async (msg: any) => {
     try {
         const fromMe = msg.key.fromMe;
         const from = msg.key.remoteJid;
         const phoneNumber = from.split('@')[0];
 
+        // Si el mensaje fue enviado por el humano desde el celular de la empresa
         if (fromMe) {
-            console.log(`Mensaje enviado por mí (ignorado): ${from}`);
+            console.log(`[PAUSA] Humano intervino en el chat con ${phoneNumber}. Bot pausado por 30 mins.`);
+            humanTakeover[from] = Date.now();
             return;
+        }
+
+        // Si el chat está en modo "humano", ignorar los mensajes del cliente
+        if (humanTakeover[from]) {
+            const timeSinceTakeover = Date.now() - humanTakeover[from];
+            if (timeSinceTakeover < TAKEOVER_TIMEOUT_MS) {
+                console.log(`[SILENCIO] Chat con ${phoneNumber} está siendo manejado por un humano.`);
+                return;
+            } else {
+                // Ya pasó el tiempo de pausa, reactivar el bot
+                delete humanTakeover[from];
+                console.log(`[ACTIVO] Bot reactivado para el chat con ${phoneNumber}.`);
+            }
         }
 
         // Desenvolver mensajes efímeros o de ver una vez
@@ -208,13 +227,13 @@ Bebidas y acompañamientos
         if (sendsZonaFoto) {
             const folderPath = path.join(process.cwd(), 'media', sendsZonaFoto);
             if (fs.existsSync(folderPath) && fs.statSync(folderPath).isDirectory()) {
-                const files = fs.readdirSync(folderPath).filter(f => f.match(/\.(jpg|jpeg|png)$/i)).slice(0, 4);
+                const files = fs.readdirSync(folderPath).filter(f => f.match(/\.(jpg|jpeg|png)$/i)).slice(0, 10);
                 if (files.length > 0) {
                     for (const file of files) {
                         const imgPath = path.join(folderPath, file);
                         await sock.sendMessage(from, { image: fs.readFileSync(imgPath) });
                     }
-                    await sendWhatsAppMessage(from, '¡Mira qué hermosas son nuestras instalaciones! 🤩');
+                    await sendWhatsAppMessage(from, '¡Aquí tienes las fotos! 📸');
                 }
             }
         }

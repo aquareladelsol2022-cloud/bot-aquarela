@@ -30,7 +30,7 @@ Contamos con diferentes zonas y niveles de atención a la mesa:
 - Zona VIP (Cosmos 105): Capacidad máxima de 25 personas. Obligatorio mesero personalizado.
 - Zona Balcón: NO hay mesero de ningún tipo. Los clientes pueden pedir en la caja y llevarse el pedido, o consumir en otras zonas y luego desplazarse al balcón.
 - Zona SPA: Capacidad máxima de 6 personas. Costos: 1 hora por $50.000 COP, 2 horas por $70.000 COP, 3 horas por $80.000 COP, hora adicional por $15.000 COP. Paquete de pareja SPA: $390.000.
-(FOTOS DISPONIBLES por carpetas: agua, aire, fuego, tierra, lago, salon_eventos, vip, piscina, granja, amacas, banos, cabana_rio, cabana_lago, caja, carrosa. Si piden foto de la zona, usa la regla mágica de tu system prompt con el nombre exacto de la carpeta, ej. [ENVIAR_FOTOS]agua).
+(FOTOS DISPONIBLES por carpetas: agua, aire, amacas, areas_depublicidad, banos, BEBIDAS, cabana_de_rio_2, cabana_lago, cabana_rio, cabana_spa, caja, carrosa, certificados, chocolate, COMIDA__2, convertidas, convertida_noche, cosmos, decoracion_fiestas_estandar, decoracion_romantica, DESAYUNOS, discapacidad, ENTRADAS, EVENTOS, fachada, figuras_y_pinturas, fuego, fuente, gallina, granja, juegos_infantiles, juegos_mecanicos_otros, lago_de_pezca, malagana, MUSICA_EN_VIVO, pantalla, parqueadero, piscina, POSTRES, salon_eventos, SELFIES_PARQUE, senderos, tienda, tierra, vip, vivero, zona_verde, zona__posterior. Si el cliente pide fotos de algo, busca si coincide con alguna de estas carpetas y usa la regla mágica de tu system prompt con el nombre exacto, ej. [ENVIAR_FOTOS]areas_depublicidad).
 
 MENÚ, PROMOCIONES Y DOMICILIOS
 (Si el cliente pide ver el menú completo en PDF, DEBES enviar la palabra mágica [ENVIAR_PDF]).
