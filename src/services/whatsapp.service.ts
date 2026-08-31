@@ -6,10 +6,6 @@ import os from 'os';
 
 export const whatsappClient = new Client({
     authStrategy: new LocalAuth(),
-    webVersionCache: {
-        type: 'remote',
-        remotePath: 'https://raw.githubusercontent.com/wppconnect-team/wa-version/main/html/2.3000.1046388543-alpha.html',
-    },
     puppeteer: {
         executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || undefined,
         args: [
