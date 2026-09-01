@@ -113,7 +113,7 @@ const handleMessage = async (msg: any) => {
                     fechaLegible = dateObj.toLocaleString('es-CO', { timeZone: 'America/Bogota', dateStyle: 'full', timeStyle: 'short' });
                 } catch(e) {}
 
-                const ownerPhone = process.env.OWNER_PHONE || '573183764628';
+                const ownerPhone = process.env.OWNER_PHONE || '573126868728';
                 const ownerMsg = `🗓️ *¡NUEVA RESERVA AUTOMÁTICA!* 🗓️\n\n👤 *Nombre:* ${reserva.nombre}\n🕒 *Fecha y Hora:* ${fechaLegible}\n👥 *Personas:* ${reserva.personas}\n📝 *Detalles:* ${reserva.detalles || 'Ninguno'}\n📱 *Teléfono Cliente:* ${phoneNumber}`;
                 await sendWhatsAppMessage(ownerPhone, ownerMsg);
 
@@ -193,9 +193,6 @@ Bebidas y acompañamientos
         const sendsPdf = aiResponse.includes('[ENVIAR_PDF]');
         if (sendsPdf) aiResponse = aiResponse.replace('[ENVIAR_PDF]', '').trim();
 
-        const sendsDecoraciones = aiResponse.includes('[ENVIAR_FOTO_DECORACIONES]');
-        if (sendsDecoraciones) aiResponse = aiResponse.replace('[ENVIAR_FOTO_DECORACIONES]', '').trim();
-
         console.log(`[DEBUG] Respuesta cruda de OpenAI: ${aiResponse}`);
 
         let sendsZonaFoto: string | null = null;
@@ -223,18 +220,8 @@ Bebidas y acompañamientos
             }
         }
 
-        if (sendsDecoraciones) {
-            const imgPath = path.join(process.cwd(), 'decoraciones.jpg');
-            if (fs.existsSync(imgPath)) {
-                await sock.sendMessage(from, { 
-                    image: fs.readFileSync(imgPath), 
-                    caption: '¡Conoce nuestras espectaculares opciones de decoración! 🎉' 
-                });
-            }
-        }
-
         if (sendsZonaFoto) {
-            const folderPath = path.join(process.cwd(), sendsZonaFoto);
+            const folderPath = path.join(process.cwd(), 'media', sendsZonaFoto);
             console.log(`[DEBUG FOTOS] El cliente pidió fotos de: ${sendsZonaFoto}`);
             console.log(`[DEBUG FOTOS] Buscando carpeta en la ruta: ${folderPath}`);
             
