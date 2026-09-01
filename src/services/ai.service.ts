@@ -89,22 +89,27 @@ export const getAiResponse = async (message: string, phone: string): Promise<str
       ];
     } else {
       // Siempre actualizar el system prompt para tener la hora más reciente
-      conversations[phone][0].content = dynamicSystemPrompt;
+      const conv = conversations[phone];
+      if (conv && conv[0]) {
+        conv[0].content = dynamicSystemPrompt;
+      }
     }
 
     // Add user message to history
     conversations[phone].push({ role: 'user', content: message });
 
     // Keep only the last 15 messages to avoid exceeding token limits
-    if (conversations[phone].length > 15) {
+    if (conversations[phone] && conversations[phone].length > 15) {
        const sysPrompt = conversations[phone][0];
        const lastMessages = conversations[phone].slice(-14);
-       conversations[phone] = [sysPrompt, ...lastMessages];
+       if (sysPrompt) {
+         conversations[phone] = [sysPrompt, ...lastMessages];
+       }
     }
 
     const response = await openai.chat.completions.create({
       model: 'gpt-4o-mini', // Changed to mini for extreme cost savings (~99% cheaper)
-      messages: messagesWithContext as any,
+      messages: conversations[phone] as any,
       temperature: 0.2, // Low temperature for factual consistency con la knowledge base
     });
 
