@@ -18,6 +18,7 @@ app.listen(port, () => console.log(`Servidor web escuchando en el puerto ${port}
 // Memoria temporal para pausar el bot si un humano interviene
 const humanTakeover: Record<string, number> = {};
 const TAKEOVER_TIMEOUT_MS = 30 * 60 * 1000; // 30 minutos de pausa
+const lastImageReply: Record<string, number> = {};
 
 const handleMessage = async (msg: any) => {
     try {
@@ -78,7 +79,13 @@ const handleMessage = async (msg: any) => {
                 msgBody = 'Lo siento, no pude descargar el audio para escucharlo.';
             }
         } else if (messageType === 'imageMessage') {
-            msgBody = '🖼️ [Imagen recibida]';
+            const now = Date.now();
+            if (lastImageReply[phoneNumber] && (now - lastImageReply[phoneNumber] < 60000)) {
+                console.log(`Ignorando imagen consecutiva de ${phoneNumber}`);
+                return; 
+            }
+            lastImageReply[phoneNumber] = now;
+            msgBody = '[SYSTEM: El cliente acaba de enviarte una o varias FOTOS. Dile amablemente que como eres una IA no puedes ver fotos, pero que si es un comprobante de pago de reserva, un asesor humano lo revisará en breve.]';
         } else {
             console.log(`Tipo de mensaje ignorado: ${messageType}`);
             return;

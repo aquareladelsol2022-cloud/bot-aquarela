@@ -45,6 +45,22 @@ Reglas generales de tu personalidad:
 9. SI el cliente quiere ver FOTOS de alguna de las ZONAS del restaurante (ej. piscina, agua, parqueadero), TIENES QUE INCLUIR OBLIGATORIAMENTE Y SIN EXCEPCIÓN esta palabra oculta en tu respuesta: [ENVIAR_FOTOS]nombre_de_la_carpeta (Sustituyendo nombre_de_la_carpeta por la carpeta correspondiente de la base de conocimientos, ej. [ENVIAR_FOTOS]agua).
    **REGLA CRÍTICA**: Nunca olvides incluir [ENVIAR_FOTOS]nombre_de_la_carpeta cuando hables de fotos, de lo contrario el sistema fallará. Tu única acción debe ser usar el texto [ENVIAR_FOTOS]. No llames a herramientas de reservas.
 10. SI el cliente pregunta por la promoción 2x1, incluye EXACTAMENTE esta palabra oculta en tu respuesta: [ENVIAR_PROMO_2X1]. ¡NO intentes dictar los platos tú mismo!
+11. COTIZACIONES Y COMANDAS: Si el cliente te pide una cotización o está planeando un evento, debes calcular los costos según las reglas de la base de conocimientos y mostrarle la cotización en este formato EXACTO en markdown:
+
+📋 *COTIZACIÓN - EVENTOS LA AQUARELA* 📋
+👤 *Cliente:* [Nombre]
+👥 *No. Personas:* [Número]
+📍 *Ubicación:* [Zona]
+🗓️ *Fecha del Evento:* [Fecha]
+
+*Detalle de Pedido:*
+- [Cantidad]x [Plato/Servicio]: $[Precio Total]
+...
+
+💰 *TOTAL NETO:* $[Total] COP
+💵 *TOTAL A CANCELAR (ABONO REQUERIDO):* $[Monto del Abono según las reglas] COP
+
+*(Aviso: La propina es voluntaria y se decide en el restaurante. Si hay decoración se abona el 100%, si hay comida el 50%. No hay devoluciones de dinero).*
 `;
 
 interface ChatMessage {
@@ -63,11 +79,17 @@ const conversations: Record<string, ChatMessage[]> = {};
  */
 export const getAiResponse = async (message: string, phone: string): Promise<string> => {
   try {
+    const currentDateTime = new Date().toLocaleString('es-CO', { timeZone: 'America/Bogota', dateStyle: 'full', timeStyle: 'short' });
+    const dynamicSystemPrompt = systemPrompt + `\n\n[CONTEXTO DE TIEMPO REQUERIDO PARA PROMOCIONES Y RESERVAS]\nFECHA Y HORA ACTUAL: Hoy es ${currentDateTime}.\nUsa esta fecha como referencia para saber qué día es "hoy", "mañana", o cuando el cliente indique un día de la semana. TEN EN CUENTA EL DÍA DEL EVENTO AL COTIZAR: Si el evento que cotizas cae un fin de semana o festivo, las promociones 2x1 NO APLICAN (se cobra el precio normal por 1 solo plato).`;
+
     // Initialize history if it doesn't exist
     if (!conversations[phone]) {
       conversations[phone] = [
-        { role: 'system', content: systemPrompt }
+        { role: 'system', content: dynamicSystemPrompt }
       ];
+    } else {
+      // Siempre actualizar el system prompt para tener la hora más reciente
+      conversations[phone][0].content = dynamicSystemPrompt;
     }
 
     // Add user message to history
@@ -77,15 +99,8 @@ export const getAiResponse = async (message: string, phone: string): Promise<str
     if (conversations[phone].length > 15) {
        const sysPrompt = conversations[phone][0];
        const lastMessages = conversations[phone].slice(-14);
-       if (sysPrompt) {
-         conversations[phone] = [sysPrompt, ...lastMessages];
-       } else {
-         conversations[phone] = lastMessages;
-       }
+       conversations[phone] = [sysPrompt, ...lastMessages];
     }
-
-    const dateContext = `Recuerda: La fecha y hora actual en Colombia es ${new Date().toLocaleString('es-CO', { timeZone: 'America/Bogota' })}. Usa el año actual para las reservas.`;
-    const messagesWithContext = [...conversations[phone], { role: 'system', content: dateContext }];
 
     const response = await openai.chat.completions.create({
       model: 'gpt-4o-mini', // Changed to mini for extreme cost savings (~99% cheaper)
