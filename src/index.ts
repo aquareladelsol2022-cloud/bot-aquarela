@@ -192,7 +192,7 @@ Bebidas y acompañamientos
         console.log(`[DEBUG] Respuesta cruda de OpenAI: ${aiResponse}`);
 
         let sendsZonaFoto: string | null = null;
-        const fotoMatch = aiResponse.match(/\[ENVIAR_FOTOS\]\s*([A-Za-z0-9_.-]+)/);
+        const fotoMatch = aiResponse.match(/\[ENVIAR_FOTOS\]\s*([A-Za-z0-9_-]+)/);
         if (fotoMatch && fotoMatch[1]) {
             sendsZonaFoto = fotoMatch[1].trim();
             aiResponse = aiResponse.replace(fotoMatch[0], '').trim();
