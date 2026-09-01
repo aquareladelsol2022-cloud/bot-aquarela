@@ -42,7 +42,9 @@ export const initWhatsAppClient = async (onMessageReceived: (msg: any) => Promis
                     if (fs.existsSync(authDir)) {
                         const files = fs.readdirSync(authDir);
                         for (const file of files) {
-                            fs.unlinkSync(path.join(authDir, file));
+                            if (file !== 'lost+found') {
+                                fs.rmSync(path.join(authDir, file), { recursive: true, force: true });
+                            }
                         }
                     }
                 } catch(e) { console.error("Error borrando llaves:", e); }
