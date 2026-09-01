@@ -189,6 +189,8 @@ Bebidas y acompañamientos
         const sendsDecoraciones = aiResponse.includes('[ENVIAR_FOTO_DECORACIONES]');
         if (sendsDecoraciones) aiResponse = aiResponse.replace('[ENVIAR_FOTO_DECORACIONES]', '').trim();
 
+        console.log(`[DEBUG] Respuesta cruda de OpenAI: ${aiResponse}`);
+
         let sendsZonaFoto: string | null = null;
         const fotoMatch = aiResponse.match(/\[ENVIAR_FOTOS\]\s*([A-Za-z0-9_.-]+)/);
         if (fotoMatch && fotoMatch[1]) {
