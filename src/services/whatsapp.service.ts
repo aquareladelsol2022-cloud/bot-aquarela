@@ -38,8 +38,14 @@ export const initWhatsAppClient = async (onMessageReceived: (msg: any) => Promis
             } else {
                 console.log('La sesión fue cerrada desde el celular. Borrando sesión antigua y reiniciando contenedor...');
                 try {
-                    fs.rmSync(path.join(process.cwd(), 'baileys_auth_info'), { recursive: true, force: true });
-                } catch(e) {}
+                    const authDir = path.join(process.cwd(), 'baileys_auth_info');
+                    if (fs.existsSync(authDir)) {
+                        const files = fs.readdirSync(authDir);
+                        for (const file of files) {
+                            fs.unlinkSync(path.join(authDir, file));
+                        }
+                    }
+                } catch(e) { console.error("Error borrando llaves:", e); }
                 
                 // Matamos el proceso para que Railway lo reinicie fresco y genere un nuevo QR
                 process.exit(1);
