@@ -36,11 +36,13 @@ export const initWhatsAppClient = async (onMessageReceived: (msg: any) => Promis
             if (shouldReconnect) {
                 initWhatsAppClient(onMessageReceived);
             } else {
-                console.log('La sesión fue cerrada desde el celular. Borrando sesión antigua y reiniciando...');
+                console.log('La sesión fue cerrada desde el celular. Borrando sesión antigua y reiniciando contenedor...');
                 try {
                     fs.rmSync(path.join(process.cwd(), 'baileys_auth_info'), { recursive: true, force: true });
                 } catch(e) {}
-                setTimeout(() => initWhatsAppClient(onMessageReceived), 2000);
+                
+                // Matamos el proceso para que Railway lo reinicie fresco y genere un nuevo QR
+                process.exit(1);
             }
         } else if (connection === 'open') {
             console.log('¡Cliente de WhatsApp Web conectado y listo! (Baileys)');
