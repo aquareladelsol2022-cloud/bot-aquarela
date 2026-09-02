@@ -22,14 +22,16 @@ INFORMACIÓN GENERAL Y ATRACTIVOS
 - Transmisión de deportes: Proyectamos los partidos de fútbol importantes para que nuestros clientes puedan disfrutar del deporte mientras comen.
 - Parapente: Para el servicio de parapente (realizado por terceros), deben comunicarse al +57 318 4891165.
 
-ZONAS DEL RESTAURANTE, COSTOS DE ALQUILER Y MESEROS
+ZONAS DEL RESTAURANTE Y PAQUETES ESPECIALES
 Contamos con diferentes zonas. ALGUNAS cobran alquiler por horas y otras son solo por consumo:
-- Zonas Aire, Tierra, Fuego, Agua: Atencin normal. SOLO se paga lo que se consume (no hay cobro por el espacio).
-- Zonas VIP (Cosmos 103 y 104): Capacidad mǭxima de 6 personas. Costo de alquiler: 1 hora por $50.000 COP, 2 horas por $70.000 COP, 3 horas por $80.000 COP. DespuǸs de 3 horas, la hora adicional vale $15.000 COP. (No tienen mesero personalizado, los pedidos se hacen por telǸfono marcando 0).
-- Zona SPA / Cosmos 102: Capacidad mǭxima de 6 personas. Tiene JACUZZI. Costo de alquiler: 1 hora por $50.000 COP, 2 horas por $70.000 COP, 3 horas por $80.000 COP. DespuǸs de 3 horas, la hora adicional vale $15.000 COP.
-- Zona VIP (Cosmos 105): Capacidad mǭxima de 25 personas. (Aplica cobro de alquiler, confirmar disponibilidad).
-- Zona Lagos y Saln de Eventos: (Aplica cobro de alquiler, confirmar disponibilidad).
-- Zona Balcn: NO hay mesero de ningǧn tipo. Los clientes pueden pedir en la caja y llevarse el pedido, o consumir en otras zonas y luego desplazarse al balcn.
+- Terrazas (Aire, Juego, Tierra, Agua): Capacidad para 60 personas cada una. Unidas albergan hasta 300 personas. En estas zonas SOLO pagas lo que consumes (Atención normal).
+- Zona Lagos: Capacidad máxima de 150 personas. Se paga solo lo que consumes.
+- Salón de Eventos: Capacidad máxima de 80 personas. Cuenta con video beam, 3 aires acondicionados y sonido. En esta zona SOLO pagas lo que consumes.
+- Zona VIP (Cosmos 103 y 104): Capacidad máxima de 6 personas. Costo de alquiler: 1 hora $50.000, 2 horas $70.000, 3 horas $80.000. Después de 3 horas, la hora adicional vale $15.000. (Los pedidos se hacen marcando 0).
+- Zona Cosmos 105: Capacidad máxima de 25 personas. Costo de alquiler: 1 hora $50.000, 2 horas $70.000, 3 horas $80.000.
+- Zona SPA (Paquete Especial): Jacuzzi y paquete de 4 horas que incluye cena, comida, bebidas, cócteles, decoración y uso exclusivo del jacuzzi. Valor: $390.000 (4 horas). Capacidad máxima de 6 personas. (Si el cliente solo quiere alquilar el espacio SPA por horas sin paquete, vale 1h/$50k, 2h/$70k, 3h/$80k).
+- Cena Romántica (Paquete Especial): Incluye decoración, cena, bebidas, cócteles y zona privada. Valor: $253.000 (2 horas).
+- Zona Balcón: NO hay mesero de ningún tipo. Los clientes piden en caja.
 
 REGLAS DEL MESERO PERSONALIZADO ($80.000 COP por todo el evento):
 - El servicio de mesero personalizado es OBLIGATORIO en las siguientes zonas, sin importar el nǧmero de personas: Lagos, Cosmos 105 y Saln de Eventos.
@@ -37,9 +39,14 @@ REGLAS DEL MESERO PERSONALIZADO ($80.000 COP por todo el evento):
 - Si la reserva es de menos de 15 personas en zonas normales, el mesero personalizado es opcional.
 (FOTOS DISPONIBLES por carpetas: agua, aire, amacas, areas_depublicidad, banos, BEBIDAS, cabana_de_rio_2, cabana_lago, cabana_rio, spa, caja, carrosa, certificados, chocolate, COMIDA__2, convertidas, convertida_noche, cosmos_103, cosmos_104, cosmos_105, decoracion_fiestas_estandar, decoracion_romantica, DESAYUNOS, discapacidad, ENTRADAS, EVENTOS, fachada, figuras_y_pinturas, fuego, fuente, gallina, granja, juegos_infantiles, juegos_mecanicos_otros, lago_de_pezca, malagana, MUSICA_EN_VIVO, pantalla, parqueadero, piscina, POSTRES, salon_eventos, SELFIES_PARQUE, senderos, tienda, tierra, vip, vivero, zona_verde, zona__posterior. Si el cliente pide fotos de algo, busca si coincide con alguna de estas carpetas y usa la regla mǭgica de tu system prompt con el nombre exacto, ej. [ENVIAR_FOTOS]areas_depublicidad).
 
-MENÚ COMPLETO, PROMOCIONES Y DOMICILIOS
-(Si el cliente pide ver el menǧ completo en PDF, DEBES enviar la palabra mǭgica [ENVIAR_PDF]).
+MENÚS COMPLETO, PROMOCIONES Y DOMICILIOS
+(Si el cliente pide ver el menú completo en PDF, DEBES enviar la palabra mágica [ENVIAR_PDF]).
 - Domicilios: NO hacemos domicilios fuera de La Buitrera. Si es en La Buitrera, comunicarse al +57 321 8149000 o +57 305 3373813.
+
+DESAYUNOS 2x1 (TODOS LOS DÍAS de 7:00 AM a 11:00 AM):
+- Opción 1: Omelette, pericos o huevos revueltos con bebida ($20.000)
+- Opción 2: Calentados con arepa, queso y bebida ($26.000)
+- Opción 3: Tamales con bebida ($38.000)
 
 PROMOCIONES 2x1 (Lunes a Viernes hasta las 12 PM, NO festivos):
 - Pastas: Champinara ($68.000), Bolognesa ($68.000), Frutos del Mar ($75.000), Camarones en chontaduro ($80.000).
@@ -47,7 +54,12 @@ PROMOCIONES 2x1 (Lunes a Viernes hasta las 12 PM, NO festivos):
 - Otros 2x1: Hamburguesa Angus ($55.000), Michelado de Cerveza ($20.000), Aguapanela Arepa/Queso ($20.000/$19.000), Chocolate Leche Queso ($24.000), Frijolada aguapanela ($50.000).
 
 ENTRADAS E INFANTIL
-- Chicharrn con papas fritas: $39.000
+- Chicharrón con papas fritas: $39.000
+
+PARQUE TEMÁTICO
+Con el consumo en el restaurante, los clientes tienen acceso gratuito a:
+- Tobogán de pelotas, deslizaderos, máquinas de arcades, juego de sapo, toboganes del balcón, playground, arenero y granja.
+- Lago de pesca: La pesca (cachama, trucha, tilapia roja) tiene un costo de $12.000 por libra.
 - Aborrajados x3: $30.000
 - Tostadas con hogao y aj x4: $24.000
 - Choricitos picantes x10: $36.000
@@ -90,7 +102,7 @@ Eventos y Grupos Grandes:
 - Para el resto, manejamos "Carta Abierta".
 
 DECORACIONES, CUMPLEAÑOS Y FOTOS
-(Si el cliente quiere ver FOTOS de las decoraciones, DEBES usar la palabra mágica [ENVIAR_FOTO_DECORACIONES]).
+(Para enviar fotos de las decoraciones, usa la regla general [ENVIAR_FOTOS]decoracion_fiestas_estandar o [ENVIAR_FOTOS]decoracion_romantica según corresponda).
 El cliente puede traer su propia torta y decoración, o elegir uno de nuestros paquetes:
 1. Bouquet plus (12 globos r12, flores artificiales): $65.000
 2. Bouquet mariposa (12 globos r12, HBD en globos y mariposas mostacho): $85.000
