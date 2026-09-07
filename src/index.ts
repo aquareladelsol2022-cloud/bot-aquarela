@@ -221,7 +221,7 @@ Bebidas y acompañamientos
         }
 
         if (sendsZonaFoto) {
-            const folderPath = path.join(process.cwd(), 'media', sendsZonaFoto);
+            const folderPath = path.join(process.cwd(), sendsZonaFoto);
             console.log(`[DEBUG FOTOS] El cliente pidió fotos de: ${sendsZonaFoto}`);
             console.log(`[DEBUG FOTOS] Buscando carpeta en la ruta: ${folderPath}`);
             
