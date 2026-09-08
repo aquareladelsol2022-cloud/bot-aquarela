@@ -26,10 +26,15 @@ const handleMessage = async (msg: any) => {
         const from = msg.key.remoteJid;
         const phoneNumber = from.split('@')[0];
 
-        // Si el mensaje fue enviado por el humano desde el celular de la empresa
+        // Extraer texto del mensaje para asegurarnos de que es un mensaje real
+        const textMessage = msg.message?.conversation || msg.message?.extendedTextMessage?.text || msg.message?.imageMessage?.caption || '';
+
+        // Si el mensaje fue enviado por el humano (y tiene texto real, no es un evento de sincronización del sistema)
         if (fromMe) {
-            console.log(`[PAUSA] Humano intervino en el chat con ${phoneNumber}. Bot pausado por 30 mins.`);
-            humanTakeover[from] = Date.now();
+            if (textMessage.trim().length > 0) {
+                console.log(`[PAUSA] Humano intervino en el chat con ${phoneNumber}. Bot pausado por 30 mins. (Texto: ${textMessage})`);
+                humanTakeover[from] = Date.now();
+            }
             return;
         }
 
