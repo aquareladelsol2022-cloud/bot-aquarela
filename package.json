@@ -13,6 +13,7 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "@whiskeysockets/baileys": "^7.0.0-rc14",
     "axios": "^1.18.1",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
@@ -22,9 +23,8 @@
     "multer": "^2.2.0",
     "ngrok": "^5.0.0-beta.2",
     "openai": "^6.45.0",
-    "qrcode-terminal": "^0.12.0",
-    "@whiskeysockets/baileys": "^6.7.7",
-    "pino": "^9.3.2"
+    "pino": "^9.3.2",
+    "qrcode-terminal": "^0.12.0"
   },
   "devDependencies": {
     "@types/express": "^5.0.6",

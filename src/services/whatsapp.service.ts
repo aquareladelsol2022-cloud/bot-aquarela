@@ -15,7 +15,9 @@ export const initWhatsAppClient = async (onMessageReceived: (msg: any) => Promis
         auth: state,
         printQRInTerminal: false,
         logger: pino({ level: 'silent' }) as any,
-        browser: ['La Aquarela Bot', 'Chrome', '1.0.0']
+        browser: ['Ubuntu', 'Chrome', '20.0.04'],
+        syncFullHistory: false,
+        markOnlineOnConnect: false
     });
 
     sock.ev.on('connection.update', (update: any) => {
