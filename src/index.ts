@@ -104,7 +104,8 @@ const handleMessage = async (msg: any) => {
         
         // --- MANEJO DE RESERVAS ---
         if (aiResponse.includes('[RESERVA_TRIGGER]')) {
-            const jsonMatch = aiResponse.match(/\{[\s\S]*?\}/);
+            const afterTrigger = aiResponse.split('[RESERVA_TRIGGER]')[1];
+            const jsonMatch = afterTrigger.match(/\{[\s\S]*?\}/);
             try {
                 if (!jsonMatch) throw new Error("No JSON found");
                 const reserva = JSON.parse(jsonMatch[0]);
@@ -127,6 +128,17 @@ const handleMessage = async (msg: any) => {
                 console.error("Error parsing reservation tool arguments", e);
                 aiResponse = "Tuvimos un pequeño inconveniente procesando tu reserva. Un asesor humano se contactará contigo en unos minutos.";
             }
+        }
+
+        // --- MANEJO DE ESCALAMIENTO A HUMANO ---
+        if (aiResponse.includes('[ESCALAR_HUMANO]')) {
+            aiResponse = aiResponse.replace('[ESCALAR_HUMANO]', '').trim();
+            const ownerPhone = process.env.OWNER_PHONE || '573126868728';
+            const alertMsg = `🚨 *¡ALERTA DE ATENCIÓN!* 🚨\n\nEl bot se ha enredado o el cliente está molesto/necesita ayuda humana urgente.\n\n📱 *Teléfono Cliente:* ${phoneNumber}\nRevisa la conversación de inmediato.`;
+            await sendWhatsAppMessage(ownerPhone, alertMsg);
+            
+            // Pausar el bot para este cliente por 30 minutos para que el humano intervenga
+            humanTakeover[from] = Date.now();
         }
 
         // --- MANEJO DE DATOS DE PAGO ---
