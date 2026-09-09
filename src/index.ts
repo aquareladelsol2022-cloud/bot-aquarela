@@ -104,7 +104,7 @@ const handleMessage = async (msg: any) => {
         
         // --- MANEJO DE RESERVAS ---
         if (aiResponse.includes('[RESERVA_TRIGGER]')) {
-            const afterTrigger = aiResponse.split('[RESERVA_TRIGGER]')[1];
+            const afterTrigger = aiResponse.split('[RESERVA_TRIGGER]')[1] || '';
             const jsonMatch = afterTrigger.match(/\{[\s\S]*?\}/);
             try {
                 if (!jsonMatch) throw new Error("No JSON found");
