@@ -83,14 +83,22 @@ const handleMessage = async (msg: any) => {
             } else {
                 msgBody = 'Lo siento, no pude descargar el audio para escucharlo.';
             }
-        } else if (messageType === 'imageMessage') {
+        } else if (messageType === 'imageMessage' || messageType === 'documentMessage') {
             const now = Date.now();
             if (lastImageReply[phoneNumber] && (now - lastImageReply[phoneNumber] < 60000)) {
-                console.log(`Ignorando imagen consecutiva de ${phoneNumber}`);
+                console.log(`Ignorando imagen/documento consecutivo de ${phoneNumber}`);
                 return; 
             }
             lastImageReply[phoneNumber] = now;
-            msgBody = '[SYSTEM: El cliente acaba de enviarte una o varias FOTOS. Dile amablemente que como eres una IA no puedes ver fotos, pero que si es un comprobante de pago de reserva, un asesor humano lo revisará en breve.]';
+            msgBody = '[SYSTEM: El cliente acaba de enviarte una o varias FOTOS o DOCUMENTOS. Dile amablemente que como eres una IA no puedes ver archivos, pero que si es un comprobante de pago, un asesor humano lo revisará en breve.]';
+            
+            // Avisar al dueño para que revise el pago
+            const ownerPhone = process.env.OWNER_PHONE || '573126868728';
+            const alertMsg = `💸 *¡POSIBLE COMPROBANTE DE PAGO RECIBIDO!* 💸\n\nEl cliente con número ${phoneNumber} acaba de enviar una foto o documento al chat.\nPor favor revisa su conversación para verificar el pago de la reserva.`;
+            await sendWhatsAppMessage(ownerPhone, alertMsg);
+            
+            // Pausar al bot para que el humano pueda confirmar el recibo tranquilamente
+            humanTakeover[from] = Date.now();
         } else {
             console.log(`Tipo de mensaje ignorado: ${messageType}`);
             return;
