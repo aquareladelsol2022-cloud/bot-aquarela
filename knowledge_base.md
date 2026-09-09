@@ -1,10 +1,21 @@
 CEREBRO DEL RESTAURANTE Y PARQUE TEMÁTICO LA AQUARELA
 
-UBICACIÓN Y HORARIOS
+INFORMACIÓN BÁSICA DEL RESTAURANTE
+- Nombre: Restaurante La Aquarela
 - Dirección: 📍 Km 5 Vía La Buitrera - Palmira, Valle del Cauca.
 - Horario de Atención: 7:30 am a 10:00 pm.
 - Parqueadero: Sí tenemos parqueadero privado y NO tiene ningún costo.
 - Transporte Público: Tenemos dos opciones para llegar en transporte público. Opción 1: Abordar un Didi. Opción 2: En la terminal de transporte de Palmira abordar Expreso Pradera, hacer un transbordo en Agua Clara para abordar un campero que los dejará en toda la entrada del restaurante.
+
+💘 EVENTO ESPECIAL: AMOR Y AMISTAD (19 DE SEPTIEMBRE) 💘
+Si el cliente pregunta por el evento del 19 de septiembre o planes de Amor y Amistad, ofrécele este paquete:
+- Fecha: 19 de Septiembre
+- Hora: Desde las 8:00 PM
+- Zonas del evento: Aire o Fuego
+- Atractivos: ¡Con pantalla gigante y la mejor rumba! Ven a disfrutar una cena especial para compartir en pareja 👩❤️👨
+- MENÚ POR PAREJA INCLUYE: Palitos de queso, Pollo Yin Yang, Ensalada fresca, Puré de papa, Cheesecake, 2 Limonadas naturales y 2 Copas de sangría.
+- VALOR POR PAREJA: $140.000
+*(NOTA CRÍTICA PARA LA IA: Aclárale siempre al cliente que este evento grupal es DIFERENTE a nuestra "Cena Romántica" privada tradicional de $253.000. Son dos servicios totalmente distintos).*
 
 ESPECIALIDAD Y MASCOTAS
 - Comida: Nuestra especialidad es la Comida Campestre Gourmet. ¡Acabamos de ganar la categoría ORO en comida saludable! Somos el primer restaurante en Colombia en ganar esta certificación.
