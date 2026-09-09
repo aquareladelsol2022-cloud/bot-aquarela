@@ -104,11 +104,11 @@ const handleMessage = async (msg: any) => {
         
         // --- MANEJO DE RESERVAS ---
         if (aiResponse.includes('[RESERVA_TRIGGER]')) {
-            const jsonArgs = aiResponse.replace('[RESERVA_TRIGGER]', '').trim();
-            const cleanJsonArgs = jsonArgs.replace(/```json/gi, '').replace(/```/g, '').trim();
-            
+            const jsonMatch = aiResponse.match(/\{[\s\S]*?\}/);
             try {
-                const reserva = JSON.parse(cleanJsonArgs);
+                if (!jsonMatch) throw new Error("No JSON found");
+                const reserva = JSON.parse(jsonMatch[0]);
+                reserva.fecha_hora = reserva.fecha_hora || reserva.fecha;
                 guardarReservaCSV(reserva.nombre, reserva.fecha_hora, reserva.personas, reserva.detalles);
                 await agregarEventoCalendario(reserva.nombre, reserva.fecha_hora, reserva.personas, reserva.detalles);
                 
@@ -119,10 +119,10 @@ const handleMessage = async (msg: any) => {
                 } catch(e) {}
 
                 const ownerPhone = process.env.OWNER_PHONE || '573126868728';
-                const ownerMsg = `🗓️ *¡NUEVA RESERVA AUTOMÁTICA!* 🗓️\n\n👤 *Nombre:* ${reserva.nombre}\n🕒 *Fecha y Hora:* ${fechaLegible}\n👥 *Personas:* ${reserva.personas}\n📝 *Detalles:* ${reserva.detalles || 'Ninguno'}\n📱 *Teléfono Cliente:* ${phoneNumber}`;
+                const ownerMsg = `🎊 *¡NUEVA RESERVA AUTOMÁTICA!* 🎊\n\n👤 *Nombre:* ${reserva.nombre}\n📅 *Fecha y Hora:* ${fechaLegible}\n👥 *Personas:* ${reserva.personas}\n📝 *Detalles:* ${reserva.detalles || 'Ninguno'}\n📱 *Teléfono Cliente:* ${phoneNumber}`;
                 await sendWhatsAppMessage(ownerPhone, ownerMsg);
 
-                aiResponse = `¡Perfecto ${reserva.nombre}! Tu reserva para ${reserva.personas} personas el ${fechaLegible} ha sido confirmada con éxito. 🎉 ¡Te esperamos en La Aquarela!`;
+                aiResponse = `¡Perfecto ${reserva.nombre}! Tu reserva para ${reserva.personas} personas el ${fechaLegible} ha sido confirmada con éxito. 🥳 ¡Te esperamos en La Aquarela!`;
             } catch (e: any) {
                 console.error("Error parsing reservation tool arguments", e);
                 aiResponse = "Tuvimos un pequeño inconveniente procesando tu reserva. Un asesor humano se contactará contigo en unos minutos.";
@@ -168,17 +168,24 @@ No sé admite el ingreso alimentos y bebidas.`;
         // --- MANEJO DE PROMO 2x1 ---
         const sendsPromo = aiResponse.includes('[ENVIAR_PROMO_2X1]');
         if (sendsPromo) {
-            const promoDetails = `Hola ☀️ 
+            const promoDetails = `Hola 👋 
 
-Promoción válida: Aplica de lunes a viernes, no festivos, todo el día
+🔥 *OFERTAS 2X1 DISPONIBLES* 🔥
 
-Platos 2x1
+☀️ *DESAYUNOS 2X1*
+⏰ *Horario:* TODOS LOS DÍAS de 7:00 a.m. a 11:00 a.m.
+- Opción 1 ($20.000): Omelette, pericos o huevos revueltos con bebida.
+- Opción 2 ($26.000): Calentados con arepa, queso y bebida.
+- Opción 3 ($38.000): Tamales con bebida.
+
+🍝 *ALMUERZOS 2X1*
+⏰ *Horario:* Lunes a viernes (NO APLICA fines de semana ni festivos) TODO EL DÍA.
 - Pasta en salsa champiñón: $68,000
 - Pasta a la boloñesa: $68,000  
 - Pasta en frutos del mar: $75,000
 - Pasta de camarones en chontaduro: $80,000
 
-Otros platos
+🍲 *Otros platos (Sin promo)*
 - Cazuela de camarones tres quesos: $74,000
 - Trucha al ajillo: $65,000
 - Porcha de cerdo: $62,000
@@ -187,11 +194,7 @@ Otros platos
 - Frijolada aguapanela: $50,000
 - Hamburguesa Angus: $55,000
 
-Bebidas y acompañamientos
-- Aguapanela con arepa: $20,000
-- Aguapanela con queso doble crema: $20,000
-- Chocolate en leche con queso: $24,000
-- Michelada de cerveza acuarela: $20,000`;
+¿Te gustaría reservar para aprovechar alguna de estas promociones en sus horarios establecidos? 😊`;
             aiResponse = aiResponse.replace('[ENVIAR_PROMO_2X1]', promoDetails);
         }
 

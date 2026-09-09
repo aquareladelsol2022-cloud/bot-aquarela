@@ -9,7 +9,7 @@ UBICACIÓN Y HORARIOS
 ESPECIALIDAD Y MASCOTAS
 - Comida: Nuestra especialidad es la Comida Campestre Gourmet. ¡Acabamos de ganar la categoría ORO en comida saludable! Somos el primer restaurante en Colombia en ganar esta certificación.
 - Mascotas: El restaurante es 100% Pet Friendly. Pueden llevar a su mascota siempre y cuando tenga bozal, estén pendientes de ella en todo momento y recojan sus heces.
-- Prohibiciones: No se admite el ingreso de alimentos y bebidas externas.
+- Prohibiciones, Descorche y Comida Externa: NO tenemos servicio de descorche. Está ESTRICTAMENTE PROHIBIDO el ingreso de cualquier tipo de alimentos o bebidas externas. La ÚNICA excepción son las tortas de cumpleaños. Para cualquier otro caso especial, el cliente debe hablarlo directamente con el personal administrativo en el restaurante.
 
 INFORMACIÓN GENERAL Y ATRACTIVOS
 - Atractivos del Parque: Con el consumo de un plato fuerte por persona en el restaurante, el ingreso al Parque Temático es totalmente GRATUITO. Si NO consumen, la entrada al parque tiene un costo de $10.000 COP por persona. El parque incluye toboganes, máquinas arcade, playground y granja.
