@@ -145,35 +145,18 @@ const handleMessage = async (msg: any) => {
         const sendsDatosPago = aiResponse.includes('[ENVIAR_DATOS_PAGO]');
         if (sendsDatosPago) {
             const bankDetails = `
-¿CÓMO RESERVAR?
-Indícanos si tienes un motivo especial para celebrar, escoge la decoración, realiza la pre-orden (si deseas) y elige la zona. La reserva se realiza con el pago anticipado del 50% de la cuenta.
-
-📌 Puedes reservar con 4 horas de anterioridad si son menos de 10 personas sin decoración y preorden.
-📌 Para grupos de 10 personas o más y con preorden del menú especial debes reservar con 8 días de anterioridad.
-
-CONSIGNACIÓN
-Cta ahorro bancolombia 
+💳 *DATOS PARA CONSIGNACIÓN*
+Cta ahorro Bancolombia 
 066-000081-57
-Restaurante la Aquarela
+Restaurante La Aquarela
 Nit: 901220903
-Los gastos del envío los asume el cliente (se refiere al valor de la transacción).
+*(Los gastos de la transacción los asume el cliente).*
 
-IMPORTANTE:
-Envía el soporte (foto del recibo o pantallazo) de la consignación por Whatsapp con los siguientes datos:
-🧑🏻‍🦱👩🏽 Nombre completo:
-📱 Número de celular:
-📧 Correo electrónico:
-📅 Día de la reserva:
-⏰ Hora de la reserva:
-🕺🏻💃🏽🕺🏻 Cantidad de personas:
-🪩 Tipo de Evento (Dama u Hombre):
-🌅 Zona:
-🎈 Decoración elegida:
-💰 Valor:
+⚠️ *IMPORTANTE PARA CONFIRMAR TU RESERVA:*
+Por favor, envíanos por este medio la **foto o el pantallazo del comprobante de pago**. 
+Como ya tomamos tus datos, solo necesitamos el comprobante para dejar tu reserva confirmada al 100%.
 
-Nota: informar si hay personas alérgicas a algún producto, si necesitan silla de ruedas. 
-🛑 Si no puedes asistir en la fecha indicada, tienes un plazo de 2 meses para agendarla nuevamente. La Aquarela no realiza devolución del dinero.
-No sé admite el ingreso alimentos y bebidas.`;
+📌 *Nota:* Si no puedes asistir en la fecha indicada, tienes un plazo de 2 meses para agendarla nuevamente. La Aquarela NO realiza devolución del dinero.`;
             aiResponse = aiResponse.replace('[ENVIAR_DATOS_PAGO]', bankDetails);
         }
 
