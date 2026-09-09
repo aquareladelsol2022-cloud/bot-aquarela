@@ -120,7 +120,7 @@ const handleMessage = async (msg: any) => {
                 } catch(e) {}
 
                 const ownerPhone = process.env.OWNER_PHONE || '573126868728';
-                const ownerMsg = `🎊 *¡NUEVA RESERVA AUTOMÁTICA!* 🎊\n\n👤 *Nombre:* ${reserva.nombre}\n📅 *Fecha y Hora:* ${fechaLegible}\n👥 *Personas:* ${reserva.personas}\n📝 *Detalles:* ${reserva.detalles || 'Ninguno'}\n📱 *Teléfono Cliente:* ${phoneNumber}`;
+                const ownerMsg = `🎊 *¡PRE-RESERVA REGISTRADA!* 🎊\n\n👤 *Nombre:* ${reserva.nombre}\n📅 *Fecha y Hora:* ${fechaLegible}\n👥 *Personas:* ${reserva.personas}\n📝 *Detalles:* ${reserva.detalles || 'Ninguno'}\n📱 *Teléfono Cliente:* ${phoneNumber}\n\n⚠️ *ESTADO:* Pendiente de pago/confirmación. El cliente está terminando el proceso en WhatsApp. Si requería abono, se le acaban de enviar los datos bancarios.`;
                 await sendWhatsAppMessage(ownerPhone, ownerMsg);
 
                 aiResponse = `¡Perfecto ${reserva.nombre}! Tu reserva para ${reserva.personas} personas el ${fechaLegible} ha sido confirmada con éxito. 🥳 ¡Te esperamos en La Aquarela!`;
