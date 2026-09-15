@@ -222,21 +222,28 @@ Como ya tomamos tus datos, solo necesitamos el comprobante para dejar tu reserva
 
         if (sendsZonasFotos.length > 0) {
             for (const zonaFoto of sendsZonasFotos) {
-                const folderPath = path.join(process.cwd(), 'media', zonaFoto);
-                console.log(`[DEBUG FOTOS] El cliente pidió fotos de: ${zonaFoto}`);
-                console.log(`[DEBUG FOTOS] Buscando carpeta en la ruta: ${folderPath}`);
+                const mediaPath = path.join(process.cwd(), 'media');
+                if (!fs.existsSync(mediaPath)) continue;
                 
-                const existe = fs.existsSync(folderPath);
-                console.log(`[DEBUG FOTOS] ¿La carpeta existe en el servidor (Railway)?: ${existe}`);
+                const folders = fs.readdirSync(mediaPath);
+                const realFolder = folders.find(f => f.toLowerCase() === zonaFoto.toLowerCase());
                 
-                if (existe && fs.statSync(folderPath).isDirectory()) {
+                if (!realFolder) {
+                    console.log(`[DEBUG FOTOS] No se encontró la carpeta para ${zonaFoto}`);
+                    continue;
+                }
+                
+                const folderPath = path.join(mediaPath, realFolder);
+                console.log(`[DEBUG FOTOS] Enviando fotos de: ${realFolder}`);
+                
+                if (fs.statSync(folderPath).isDirectory()) {
                     const files = fs.readdirSync(folderPath).filter(f => f.match(/\.(jpg|jpeg|png)$/i)).slice(0, 10);
                     if (files.length > 0) {
                         for (const file of files) {
                             const imgPath = path.join(folderPath, file);
                             await sock.sendMessage(from, { image: fs.readFileSync(imgPath) });
                         }
-                        await sendWhatsAppMessage(from, `Estas son las fotos de ${zonaFoto.replace(/_/g, ' ')} 😊`);
+                        await sendWhatsAppMessage(from, `Estas son las fotos de ${realFolder.replace(/_/g, ' ')} 😊`);
                     }
                 }
             }

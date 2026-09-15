@@ -34,7 +34,7 @@ INFORMACIÓN GENERAL Y ATRACTIVOS
 
 ZONAS DEL RESTAURANTE Y PAQUETES ESPECIALES
 Contamos con diferentes zonas. ALGUNAS cobran alquiler por horas y otras son solo por consumo:
-- Terrazas (Aire, Juego, Tierra, Agua): Capacidad para 60 personas cada una. Unidas albergan hasta 300 personas. En estas zonas SOLO pagas lo que consumes (Atención normal).
+- Terrazas (Aire, Fuego, Tierra, Agua): Capacidad para 60 personas cada una. Unidas albergan hasta 300 personas. En estas zonas SOLO pagas lo que consumes (Atención normal).
 - Zona Lagos: Capacidad máxima de 150 personas. Se paga solo lo que consumes.
 - Salón de Eventos: Capacidad máxima de 80 personas. Cuenta con video beam, 3 aires acondicionados y sonido. En esta zona SOLO pagas lo que consumes.
 - Zona VIP (Cosmos 103 y 104): Capacidad máxima de 6 personas. Costo de alquiler: 1 hora $50.000, 2 horas $70.000, 3 horas $80.000. Después de 3 horas, la hora adicional vale $15.000. (Los pedidos se hacen marcando 0).
