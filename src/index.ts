@@ -121,32 +121,41 @@ const handleMessage = async (msg: any) => {
         // --- MANEJO DE RESERVAS ---
         if (aiResponse.includes('[RESERVA_TRIGGER]')) {
             const afterTrigger = aiResponse.split('[RESERVA_TRIGGER]')[1] || '';
-            const jsonMatch = afterTrigger.match(/\{[\s\S]*?\}/);
+            const jsonMatch = afterTrigger.match(/\{[\s\S]*\}/); // Match until the LAST } in case of newlines
             try {
-                if (!jsonMatch) throw new Error("No JSON found");
-                const reserva = JSON.parse(jsonMatch[0]);
+                if (!jsonMatch) throw new Error("No JSON found after trigger");
+                let rawJson = jsonMatch[0].replace(/```json/g, '').replace(/```/g, '').trim();
+                const reserva = JSON.parse(rawJson);
                 reserva.fecha_hora = reserva.fecha_hora || reserva.fecha;
+                
                 const detallesCompletos = reserva.detalles || `Zona: ${reserva.zona || 'N/A'}, Decoración: ${reserva.decoracion || 'N/A'}`;
                 guardarReservaCSV(reserva.nombre, reserva.fecha_hora, reserva.personas, detallesCompletos);
-                await agregarEventoCalendario(reserva.nombre, reserva.fecha_hora, reserva.personas, detallesCompletos);
+                
+                try {
+                    await agregarEventoCalendario(reserva.nombre, reserva.fecha_hora, reserva.personas, detallesCompletos);
+                } catch(calErr) {
+                    console.log("Error de calendario, ignorando:", calErr);
+                }
                 
                 await guardarReservaExcel(reserva, phoneNumber);
                 
                 let fechaLegible = reserva.fecha_hora;
                 try {
                     const dateObj = new Date(reserva.fecha_hora);
-                    fechaLegible = dateObj.toLocaleString('es-CO', { timeZone: 'America/Bogota', dateStyle: 'full', timeStyle: 'short' });
+                    if (!isNaN(dateObj.getTime())) {
+                        fechaLegible = dateObj.toLocaleString('es-CO', { timeZone: 'America/Bogota', dateStyle: 'full', timeStyle: 'short' });
+                    }
                 } catch(e) {}
 
                 const ownerPhone = process.env.OWNER_PHONE || '573126868728';
                 const telefonoReal = reserva.telefono_contacto || phoneNumber;
-                const ownerMsg = `🎊 *¡PRE-RESERVA REGISTRADA!* 🎊\n\n👤 *Nombre:* ${reserva.nombre}\n📅 *Fecha y Hora:* ${fechaLegible}\n👥 *Personas:* ${reserva.personas}\n📝 *Detalles:* ${reserva.detalles || 'Ninguno'}\n📱 *Teléfono Cliente:* ${telefonoReal}\n\n⚠️ *ESTADO:* Pendiente de pago/confirmación. El cliente está terminando el proceso en WhatsApp. Si requería abono, se le acaban de enviar los datos bancarios.`;
+                const ownerMsg = `🚨 *¡PRE-RESERVA REGISTRADA!* 🚨\n\n👤 *Nombre:* ${reserva.nombre}\n📅 *Fecha y Hora:* ${fechaLegible}\n👥 *Personas:* ${reserva.personas}\n📝 *Detalles:* ${reserva.detalles || 'Ninguno'}\n📱 *Teléfono Cliente:* ${telefonoReal}\n\n⏳ *ESTADO:* Pendiente de pago/confirmación.`;
                 await sendWhatsAppMessage(ownerPhone, ownerMsg);
 
                 aiResponse = `¡Perfecto ${reserva.nombre}! Tu reserva para ${reserva.personas} personas el ${fechaLegible} ha sido confirmada con éxito. 🥳 ¡Te esperamos en La Aquarela!`;
             } catch (e: any) {
                 console.error("Error parsing reservation tool arguments", e);
-                aiResponse = "Tuvimos un pequeño inconveniente procesando tu reserva. Un asesor humano se contactará contigo en unos minutos.";
+                aiResponse = `[ERROR DE SISTEMA] Intenté hacer la reserva pero fallé al guardar los datos. Por favor, verifica el formato. Error interno: ${e.message}`;
             }
         }
 
@@ -222,14 +231,18 @@ Como ya tomamos tus datos, solo necesitamos el comprobante para dejar tu reserva
 
         if (sendsZonasFotos.length > 0) {
             for (const zonaFoto of sendsZonasFotos) {
-                const mediaPath = path.join(process.cwd(), 'media');
-                if (!fs.existsSync(mediaPath)) continue;
+                let mediaPath = path.join(process.cwd(), 'media');
+                
+                // Si la carpeta media no existe (porque las fotos se subieron sueltas a GitHub), buscar en la raíz
+                if (!fs.existsSync(mediaPath)) {
+                    mediaPath = process.cwd(); 
+                }
                 
                 const folders = fs.readdirSync(mediaPath);
                 const realFolder = folders.find(f => f.toLowerCase() === zonaFoto.toLowerCase());
                 
                 if (!realFolder) {
-                    console.log(`[DEBUG FOTOS] No se encontró la carpeta para ${zonaFoto}`);
+                    console.log(`[DEBUG FOTOS] No se encontró la carpeta para ${zonaFoto} en ${mediaPath}`);
                     continue;
                 }
                 
