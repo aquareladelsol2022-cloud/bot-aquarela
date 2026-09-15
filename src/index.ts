@@ -6,6 +6,7 @@ import { getAiResponse, transcribeAudio } from './services/ai.service';
 import { sock, initWhatsAppClient, sendWhatsAppMessage, downloadWhatsAppMedia } from './services/whatsapp.service';
 import { guardarReservaCSV } from './services/reservas.service';
 import { agregarEventoCalendario } from './services/calendar.service';
+import { guardarReservaExcel } from './services/sheets.service';
 
 dotenv.config();
 
@@ -24,10 +25,17 @@ const handleMessage = async (msg: any) => {
     try {
         const fromMe = msg.key.fromMe;
         const from = msg.key.remoteJid;
-        const phoneNumber = from.split('@')[0];
+        
+        // Ignorar estados de WhatsApp
+        if (!msg.message || from === 'status@broadcast') return;
+        
+        // Si es un grupo, el número real del cliente viene en 'participant'
+        const isGroup = from.endsWith('@g.us');
+        const senderJid = isGroup ? msg.key.participant : from;
+        const phoneNumber = senderJid ? senderJid.split('@')[0].split(':')[0] : from.split('@')[0];
 
         // Extraer texto del mensaje para asegurarnos de que es un mensaje real
-        const textMessage = msg.message?.conversation || msg.message?.extendedTextMessage?.text || msg.message?.imageMessage?.caption || '';
+        const textMessage = msg.message?.conversation || msg.message?.extendedTextMessage?.text || msg.message?.imageMessage?.caption || msg.message?.videoMessage?.caption || '';
 
         // Si el mensaje fue enviado por el humano (y tiene texto real, no es un evento de sincronización del sistema)
         if (fromMe) {
@@ -83,7 +91,7 @@ const handleMessage = async (msg: any) => {
             } else {
                 msgBody = 'Lo siento, no pude descargar el audio para escucharlo.';
             }
-        } else if (messageType === 'imageMessage' || messageType === 'documentMessage') {
+        } else if (messageType === 'imageMessage' || messageType === 'documentMessage' || messageType === 'videoMessage') {
             const now = Date.now();
             if (lastImageReply[phoneNumber] && (now - lastImageReply[phoneNumber] < 60000)) {
                 console.log(`Ignorando imagen/documento consecutivo de ${phoneNumber}`);
@@ -118,8 +126,11 @@ const handleMessage = async (msg: any) => {
                 if (!jsonMatch) throw new Error("No JSON found");
                 const reserva = JSON.parse(jsonMatch[0]);
                 reserva.fecha_hora = reserva.fecha_hora || reserva.fecha;
-                guardarReservaCSV(reserva.nombre, reserva.fecha_hora, reserva.personas, reserva.detalles);
-                await agregarEventoCalendario(reserva.nombre, reserva.fecha_hora, reserva.personas, reserva.detalles);
+                const detallesCompletos = reserva.detalles || `Zona: ${reserva.zona || 'N/A'}, Decoración: ${reserva.decoracion || 'N/A'}`;
+                guardarReservaCSV(reserva.nombre, reserva.fecha_hora, reserva.personas, detallesCompletos);
+                await agregarEventoCalendario(reserva.nombre, reserva.fecha_hora, reserva.personas, detallesCompletos);
+                
+                await guardarReservaExcel(reserva, phoneNumber);
                 
                 let fechaLegible = reserva.fecha_hora;
                 try {
@@ -128,7 +139,8 @@ const handleMessage = async (msg: any) => {
                 } catch(e) {}
 
                 const ownerPhone = process.env.OWNER_PHONE || '573126868728';
-                const ownerMsg = `🎊 *¡PRE-RESERVA REGISTRADA!* 🎊\n\n👤 *Nombre:* ${reserva.nombre}\n📅 *Fecha y Hora:* ${fechaLegible}\n👥 *Personas:* ${reserva.personas}\n📝 *Detalles:* ${reserva.detalles || 'Ninguno'}\n📱 *Teléfono Cliente:* ${phoneNumber}\n\n⚠️ *ESTADO:* Pendiente de pago/confirmación. El cliente está terminando el proceso en WhatsApp. Si requería abono, se le acaban de enviar los datos bancarios.`;
+                const telefonoReal = reserva.telefono_contacto || phoneNumber;
+                const ownerMsg = `🎊 *¡PRE-RESERVA REGISTRADA!* 🎊\n\n👤 *Nombre:* ${reserva.nombre}\n📅 *Fecha y Hora:* ${fechaLegible}\n👥 *Personas:* ${reserva.personas}\n📝 *Detalles:* ${reserva.detalles || 'Ninguno'}\n📱 *Teléfono Cliente:* ${telefonoReal}\n\n⚠️ *ESTADO:* Pendiente de pago/confirmación. El cliente está terminando el proceso en WhatsApp. Si requería abono, se le acaban de enviar los datos bancarios.`;
                 await sendWhatsAppMessage(ownerPhone, ownerMsg);
 
                 aiResponse = `¡Perfecto ${reserva.nombre}! Tu reserva para ${reserva.personas} personas el ${fechaLegible} ha sido confirmada con éxito. 🥳 ¡Te esperamos en La Aquarela!`;
@@ -171,33 +183,7 @@ Como ya tomamos tus datos, solo necesitamos el comprobante para dejar tu reserva
         // --- MANEJO DE PROMO 2x1 ---
         const sendsPromo = aiResponse.includes('[ENVIAR_PROMO_2X1]');
         if (sendsPromo) {
-            const promoDetails = `Hola 👋 
-
-🔥 *OFERTAS 2X1 DISPONIBLES* 🔥
-
-☀️ *DESAYUNOS 2X1*
-⏰ *Horario:* TODOS LOS DÍAS de 7:00 a.m. a 11:00 a.m.
-- Opción 1 ($20.000): Omelette, pericos o huevos revueltos con bebida.
-- Opción 2 ($26.000): Calentados con arepa, queso y bebida.
-- Opción 3 ($38.000): Tamales con bebida.
-
-🍝 *ALMUERZOS 2X1*
-⏰ *Horario:* Lunes a viernes (NO APLICA fines de semana ni festivos) TODO EL DÍA.
-- Pasta en salsa champiñón: $68,000
-- Pasta a la boloñesa: $68,000  
-- Pasta en frutos del mar: $75,000
-- Pasta de camarones en chontaduro: $80,000
-
-🍲 *Otros platos (Sin promo)*
-- Cazuela de camarones tres quesos: $74,000
-- Trucha al ajillo: $65,000
-- Porcha de cerdo: $62,000
-- Suprema de pollo a la parrilla: $65,000
-- Lomo de cerdo a la pimienta: $65,000
-- Frijolada aguapanela: $50,000
-- Hamburguesa Angus: $55,000
-
-¿Te gustaría reservar para aprovechar alguna de estas promociones en sus horarios establecidos? 😊`;
+            const promoDetails = `Hola 🌟 Te cuento que tenemos las siguientes ofertas súper especiales:\n\n🍳 *DESAYUNOS 2X1* (Todos los días de 7 AM a 11 AM)\n- Omelette, pericos o huevos ($20,000)\n- Calentados ($26,000)\n- Tamales ($38,000)\n\n🍝 *ALMUERZOS Y CENAS 2X1* (Lunes a Viernes TODO EL DÍA, excepto festivos)\n- Pastas (Ej. Frutos del Mar $75,000)\n- Carnes y Pescados (Ej. Suprema de pollo $65,000)\n- Hamburguesa Angus ($55,000)\n\n¿Te gustaría reservar para aprovechar alguna de estas promociones? 😊`;
             aiResponse = aiResponse.replace('[ENVIAR_PROMO_2X1]', promoDetails);
         }
 
@@ -206,12 +192,15 @@ Como ya tomamos tus datos, solo necesitamos el comprobante para dejar tu reserva
 
         console.log(`[DEBUG] Respuesta cruda de OpenAI: ${aiResponse}`);
 
-        let sendsZonaFoto: string | null = null;
-        const fotoMatch = aiResponse.match(/\[ENVIAR_FOTOS\]\s*([A-Za-z0-9_-]+)/);
-        if (fotoMatch && fotoMatch[1]) {
-            sendsZonaFoto = fotoMatch[1].trim();
-            aiResponse = aiResponse.replace(fotoMatch[0], '').trim();
+        let sendsZonasFotos: string[] = [];
+        const regexFotos = /\[ENVIAR_FOTOS\]\s*([A-Za-z0-9_-]+)/g;
+        let match;
+        while ((match = regexFotos.exec(aiResponse)) !== null) {
+            if (match[1]) {
+                sendsZonasFotos.push(match[1].trim());
+            }
         }
+        aiResponse = aiResponse.replace(/\[ENVIAR_FOTOS\]\s*([A-Za-z0-9_-]+)/g, '').trim();
 
         // 1. Enviar el texto principal
         if (aiResponse.length > 0) {
@@ -231,22 +220,24 @@ Como ya tomamos tus datos, solo necesitamos el comprobante para dejar tu reserva
             }
         }
 
-        if (sendsZonaFoto) {
-            const folderPath = path.join(process.cwd(), sendsZonaFoto);
-            console.log(`[DEBUG FOTOS] El cliente pidió fotos de: ${sendsZonaFoto}`);
-            console.log(`[DEBUG FOTOS] Buscando carpeta en la ruta: ${folderPath}`);
-            
-            const existe = fs.existsSync(folderPath);
-            console.log(`[DEBUG FOTOS] ¿La carpeta existe en el servidor (Railway)?: ${existe}`);
-            
-            if (existe && fs.statSync(folderPath).isDirectory()) {
-                const files = fs.readdirSync(folderPath).filter(f => f.match(/\.(jpg|jpeg|png)$/i)).slice(0, 10);
-                if (files.length > 0) {
-                    for (const file of files) {
-                        const imgPath = path.join(folderPath, file);
-                        await sock.sendMessage(from, { image: fs.readFileSync(imgPath) });
+        if (sendsZonasFotos.length > 0) {
+            for (const zonaFoto of sendsZonasFotos) {
+                const folderPath = path.join(process.cwd(), 'media', zonaFoto);
+                console.log(`[DEBUG FOTOS] El cliente pidió fotos de: ${zonaFoto}`);
+                console.log(`[DEBUG FOTOS] Buscando carpeta en la ruta: ${folderPath}`);
+                
+                const existe = fs.existsSync(folderPath);
+                console.log(`[DEBUG FOTOS] ¿La carpeta existe en el servidor (Railway)?: ${existe}`);
+                
+                if (existe && fs.statSync(folderPath).isDirectory()) {
+                    const files = fs.readdirSync(folderPath).filter(f => f.match(/\.(jpg|jpeg|png)$/i)).slice(0, 10);
+                    if (files.length > 0) {
+                        for (const file of files) {
+                            const imgPath = path.join(folderPath, file);
+                            await sock.sendMessage(from, { image: fs.readFileSync(imgPath) });
+                        }
+                        await sendWhatsAppMessage(from, `Estas son las fotos de ${zonaFoto.replace(/_/g, ' ')} 😊`);
                     }
-                    await sendWhatsAppMessage(from, '¡Aquí tienes las fotos! 📸');
                 }
             }
         }

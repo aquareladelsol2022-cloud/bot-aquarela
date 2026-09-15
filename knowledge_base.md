@@ -8,14 +8,12 @@ INFORMACIÓN BÁSICA DEL RESTAURANTE
 - Transporte Público: Tenemos dos opciones para llegar en transporte público. Opción 1: Abordar un Didi. Opción 2: En la terminal de transporte de Palmira abordar Expreso Pradera, hacer un transbordo en Agua Clara para abordar un campero que los dejará en toda la entrada del restaurante.
 
 💘 EVENTO ESPECIAL: AMOR Y AMISTAD (19 DE SEPTIEMBRE) 💘
-Si el cliente pregunta por el evento del 19 de septiembre o planes de Amor y Amistad, ofrécele este paquete:
-- Fecha: 19 de Septiembre
-- Hora: Desde las 8:00 PM
-- Zonas del evento: Aire o Fuego
-- Atractivos: ¡Con pantalla gigante y la mejor rumba! Ven a disfrutar una cena especial para compartir en pareja 👩❤️👨
-- MENÚ POR PAREJA INCLUYE: Palitos de queso, Pollo Yin Yang, Ensalada fresca, Puré de papa, Cheesecake, 2 Limonadas naturales y 2 Copas de sangría.
+Si el cliente pregunta por el evento del 19 de septiembre o planes de Amor y Amistad, ofrécele EVENTOS ESPECIALES PRÓXIMOS:
+💘 EVENTO DE AMOR Y AMISTAD (19 de Septiembre, desde las 8:00 PM)
+- Zonas del evento: Aire o Fuego. ¡Con pantalla gigante y la mejor rumba!
+- Incluye cena especial en pareja: Palitos de queso, Pollo Yin Yang, Ensalada fresca, Puré de papa, Cheesecake, 2 Limonadas naturales y 2 Copas de sangría.
 - VALOR POR PAREJA: $140.000
-*(NOTA CRÍTICA PARA LA IA: Aclárale siempre al cliente que este evento grupal es DIFERENTE a nuestra "Cena Romántica" privada tradicional de $253.000. Son dos servicios totalmente distintos).*
+*(NOTA CRÍTICA PARA LA IA: Hasta el 19 de septiembre de 2026, si un cliente te pregunta por "Cena Romántica", TIENES QUE OFRECERLE OBLIGATORIAMENTE LAS DOS OPCIONES PARA QUE ELIJA: 1) El Evento de Amor y Amistad de $140.000 y 2) La Cena Romántica tradicional privada de $253.000. Después del 19 de septiembre, ya no ofrezcas el evento de Amor y Amistad).*
 
 ESPECIALIDAD Y MASCOTAS
 - Comida: Nuestra especialidad es la Comida Campestre Gourmet. ¡Acabamos de ganar la categoría ORO en comida saludable! Somos el primer restaurante en Colombia en ganar esta certificación.
@@ -29,7 +27,8 @@ INFORMACIÓN GENERAL Y ATRACTIVOS
 - Atención y Comida en el Parque/Piscina (Zonas de atrás): NO ofrecemos servicio a la mesa ni atención de comidas en las zonas de atrás (Parque Temático, Granja, Piscilago). Todo el consumo de alimentos se realiza estrictamente en las zonas de restaurante (Terrazas y Lagos).
 - Lago de pesca deportiva: Puedes pescar cachama, trucha y tilapia roja. El costo es de $12.000 la libra.
 - Vivero: Contamos con un hermoso vivero dentro de nuestras instalaciones.
-- Eventos especiales (Aquareloso): El último domingo de cada mes vivimos un día lleno de diversión llamado "Aquareloso" con cañón de espuma, resbalador de agua y actividades para grandes y chicos. 👨‍👩‍👧‍👦
+- Chocolate 100% Cacao: Si los clientes preguntan si vendemos barras de chocolate, infórmales que NO vendemos la barra de chocolate sola. Únicamente vendemos el chocolate ya preparado para tomar (nuestro chocolate es 100% cacao puro).
+- Eventos especiales (Aquareloso): El último domingo de cada mes vivimos un día lleno de diversión llamado "Aquareloso" con cañón de espuma, resbalador de agua y actividades para grandes y chicos. 🥳🥳🥳🥳👨‍👩‍👧‍👦
 - Transmisión de deportes: Proyectamos los partidos de fútbol importantes para que nuestros clientes puedan disfrutar del deporte mientras comen.
 - Parapente: Para el servicio de parapente (realizado por terceros), deben comunicarse al +57 318 4891165.
 
@@ -59,7 +58,7 @@ DESAYUNOS 2x1 (TODOS LOS DÍAS de 7:00 AM a 11:00 AM):
 - Opción 2: Calentados con arepa, queso y bebida ($26.000)
 - Opción 3: Tamales con bebida ($38.000)
 
-PROMOCIONES 2x1 (Lunes a Viernes hasta las 12 PM, NO festivos):
+PROMOCIONES ALMUERZOS Y CENAS 2x1 (Lunes a Viernes TODO EL DÍA, NO festivos):
 - Pastas: Champinara ($68.000), Bolognesa ($68.000), Frutos del Mar ($75.000), Camarones en chontaduro ($80.000).
 - Carnes y Pescados: Porcha de cerdo ($62.000), Suprema de pollo ($65.000), Lomo de cerdo pimienta ($65.000), Trucha al ajillo ($65.000), Cazuela camarones 3 quesos ($74.000).
 - Otros 2x1: Hamburguesa Angus ($55.000), Michelado de Cerveza ($20.000), Aguapanela Arepa/Queso ($20.000/$19.000), Chocolate Leche Queso ($24.000), Frijolada aguapanela ($50.000).
@@ -109,11 +108,11 @@ BEBIDAS (JARRAS Y CUBETAZOS PARA EVENTOS)
 - Bebidas individuales: Limonadas $10k-$18k, Jugos $13k-$16k, Gaseosa $7.000, Lulada $18.000.
 
 Eventos y Grupos Grandes:
-- "Menǧ Especial": $30.000 por persona (Solo con reserva de mnimo 4 das de anticipacin, pre-orden y abono del 50%).
-- Para el resto, manejamos "Carta Abierta".
+- "Menú Especial": $30.000 por persona. CONDICIÓN ESTRICTA: SOLO aplica para grupos de 20 personas en adelante. (Además requiere reserva con mínimo 4 días de anticipación, pre-orden y abono del 50%).
+- Si el grupo es de menos de 20 personas (ej. 12 personas), SÍ pueden reservar sin ningún problema, pero NO pueden pedir el "Menú Especial". Deben pedir a la carta ("Carta Abierta") o las opciones de menú normales.
 
 DECORACIONES, CUMPLEAÑOS Y FOTOS
-(Para enviar fotos de las decoraciones, usa la regla general [ENVIAR_FOTOS]decoracion_fiestas_estandar o [ENVIAR_FOTOS]decoracion_romantica según corresponda).
+(REGLA CRÍTICA PARA FOTOS DE DECORACIONES: Si el cliente quiere ver las decoraciones, usa MÚLTIPLES VECES la etiqueta para enviarle las 4 fotos al mismo tiempo. Debes escribir esto oculto en tu respuesta: [ENVIAR_FOTOS]bouquet_plus [ENVIAR_FOTOS]bouquet_mariposa [ENVIAR_FOTOS]decoplusmax [ENVIAR_FOTOS]decanova_1).
 El cliente puede traer su propia torta y decoración, o elegir uno de nuestros paquetes:
 1. Bouquet plus (12 globos r12, flores artificiales): $65.000
 2. Bouquet mariposa (12 globos r12, HBD en globos y mariposas mostacho): $85.000
