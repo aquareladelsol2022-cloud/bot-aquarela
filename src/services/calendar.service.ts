@@ -6,11 +6,18 @@ const KEYFILEPATH = path.join(__dirname, '../../google-credentials.json');
 // Los permisos (scopes) requeridos
 const SCOPES = ['https://www.googleapis.com/auth/calendar.events'];
 
-// Inicializar la autenticación
-const auth = new google.auth.GoogleAuth({
-  keyFile: KEYFILEPATH,
-  scopes: SCOPES,
-});
+let auth: any;
+if (process.env.GOOGLE_CREDENTIALS_JSON) {
+  auth = new google.auth.GoogleAuth({
+    credentials: JSON.parse(process.env.GOOGLE_CREDENTIALS_JSON),
+    scopes: SCOPES,
+  });
+} else {
+  auth = new google.auth.GoogleAuth({
+    keyFile: KEYFILEPATH,
+    scopes: SCOPES,
+  });
+}
 
 const calendar = google.calendar({ version: 'v3', auth });
 

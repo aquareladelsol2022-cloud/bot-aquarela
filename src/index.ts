@@ -137,11 +137,18 @@ const handleMessage = async (msg: any) => {
                     console.log("Error de calendario, ignorando:", calErr);
                 }
                 
-                await guardarReservaExcel(reserva, phoneNumber);
+                const guardadoExitoso = await guardarReservaExcel(reserva, phoneNumber);
+                if (!guardadoExitoso) {
+                    throw new Error("El sistema intentó guardar en Google Sheets pero fue rechazado. Verifica la variable SPREADSHEET_ID o el archivo google-credentials.json en Railway.");
+                }
                 
                 let fechaLegible = reserva.fecha_hora;
                 try {
-                    const dateObj = new Date(reserva.fecha_hora);
+                    // El servidor está en UTC, pero la fecha_hora del AI ya viene en hora de Bogotá.
+                    // Si hacemos new Date("2024-09-15 18:30"), lo tomará como UTC y al pasarlo a Bogotá le restará 5 horas.
+                    // Para evitarlo, le forzamos el timezone -05:00 antes de parsear.
+                    const fechaIso = reserva.fecha_hora.replace(' ', 'T') + ':00-05:00';
+                    const dateObj = new Date(fechaIso);
                     if (!isNaN(dateObj.getTime())) {
                         fechaLegible = dateObj.toLocaleString('es-CO', { timeZone: 'America/Bogota', dateStyle: 'full', timeStyle: 'short' });
                     }

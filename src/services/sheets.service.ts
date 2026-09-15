@@ -4,10 +4,18 @@ import path from 'path';
 const KEYFILEPATH = path.join(__dirname, '../../google-credentials.json');
 const SCOPES = ['https://www.googleapis.com/auth/spreadsheets'];
 
-const auth = new google.auth.GoogleAuth({
-  keyFile: KEYFILEPATH,
-  scopes: SCOPES,
-});
+let auth: any;
+if (process.env.GOOGLE_CREDENTIALS_JSON) {
+  auth = new google.auth.GoogleAuth({
+    credentials: JSON.parse(process.env.GOOGLE_CREDENTIALS_JSON),
+    scopes: SCOPES,
+  });
+} else {
+  auth = new google.auth.GoogleAuth({
+    keyFile: KEYFILEPATH,
+    scopes: SCOPES,
+  });
+}
 
 const sheets = google.sheets({ version: 'v4', auth });
 
