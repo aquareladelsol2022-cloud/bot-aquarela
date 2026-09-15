@@ -42,7 +42,45 @@ export const guardarReservaExcel = async (reserva: any, telefono: string) => {
 
     const telefonoReal = reserva.telefono_contacto || telefono;
 
-    // Columnas: FECHA DE RESERVA | HORA | NOMBRE | CELULAR | PERSONAS | ZONA | DECORACION | MESERO | ABONO | QUIEN LA HIZO | OBSERVACION
+    // Check if row already exists
+    let rowIndex = -1;
+    let targetSheet = 'Sheet1';
+    
+    try {
+      const response = await sheets.spreadsheets.values.get({
+        spreadsheetId,
+        range: 'Sheet1!A:K'
+      });
+      const rows = response.data.values || [];
+      for (let i = rows.length - 1; i >= 0; i--) {
+        const row = rows[i];
+        if (row && row[3] === telefonoReal) {
+          rowIndex = i + 1;
+          break;
+        }
+      }
+    } catch (e: any) {
+      if (e.message && e.message.includes('Unable to parse range')) {
+        targetSheet = 'Hoja 1';
+        try {
+          const res2 = await sheets.spreadsheets.values.get({
+            spreadsheetId,
+            range: 'Hoja 1!A:K'
+          });
+          const rows2 = res2.data.values || [];
+          for (let i = rows2.length - 1; i >= 0; i--) {
+            const row2 = rows2[i];
+            if (row2 && row2[3] === telefonoReal) {
+              rowIndex = i + 1;
+              break;
+            }
+          }
+        } catch(e2) {
+          console.error('Error reading Hoja 1', e2);
+        }
+      }
+    }
+
     const values = [
       [
         fechaSolo,
@@ -59,49 +97,78 @@ export const guardarReservaExcel = async (reserva: any, telefono: string) => {
       ]
     ];
 
-    const resource = {
-      values,
-    };
+    const resource = { values };
 
-    const response = await sheets.spreadsheets.values.append({
-      spreadsheetId,
-      range: 'Sheet1!A:K', 
-      valueInputOption: 'USER_ENTERED',
-      requestBody: resource,
-    });
+    if (rowIndex !== -1) {
+      // Update existing row
+      await sheets.spreadsheets.values.update({
+        spreadsheetId,
+        range: `${targetSheet}!A${rowIndex}:K${rowIndex}`,
+        valueInputOption: 'USER_ENTERED',
+        requestBody: resource,
+      });
+      console.log(`Reserva actualizada en Google Sheets exitosamente en la fila ${rowIndex}.`);
+    } else {
+      // Append new row
+      await sheets.spreadsheets.values.append({
+        spreadsheetId,
+        range: `${targetSheet}!A:K`,
+        valueInputOption: 'USER_ENTERED',
+        requestBody: resource,
+      });
+      console.log(`Reserva añadida en Google Sheets exitosamente.`);
+    }
 
-    console.log(`Reserva guardada en Google Sheets exitosamente.`);
     return true;
   } catch (error: any) {
-    // Fallback: si falla porque la hoja no se llama Sheet1, intentamos con "Hoja 1"
-    if (error.message && error.message.includes('Unable to parse range')) {
-        try {
-            console.log('Fallo Sheet1, intentando con Hoja 1');
-            const fechaHora = reserva.fecha_hora || reserva.fecha || '';
-            let fechaSolo = fechaHora;
-            let horaSolo = '';
-            const parts = fechaHora.split(' ');
-            if (parts.length > 1) {
-              fechaSolo = parts[0];
-              horaSolo = parts.slice(1).join(' ');
-            }
-            const telefonoFallback = reserva.telefono_contacto || telefono;
-            const values = [[fechaSolo, horaSolo, reserva.nombre || '', telefonoFallback, reserva.personas || '', reserva.zona || '', reserva.decoracion || 'Ninguna', reserva.mesero || 'No', reserva.abono || '0', 'Bot de IA', reserva.observacion || reserva.detalles || '']];
-            const resource = { values };
-            await sheets.spreadsheets.values.append({
-                spreadsheetId: process.env.SPREADSHEET_ID as string,
-                range: 'Hoja 1!A:K',
-                valueInputOption: 'USER_ENTERED',
-                requestBody: resource,
-            });
-            console.log(`Reserva guardada en Google Sheets (Hoja 1) exitosamente.`);
-            return true;
-        } catch(e) {
-            console.error('Error al guardar reserva en Google Sheets con Hoja 1:', e);
-            return false;
-        }
-    }
     console.error('Error al guardar reserva en Google Sheets:', error);
     return false;
+  }
+};
+
+export const obtenerReservasManana = async () => {
+  try {
+    const spreadsheetId = process.env.SPREADSHEET_ID;
+    if (!spreadsheetId) return [];
+
+    let targetSheet = 'Sheet1';
+    let rows: any[] = [];
+    try {
+      const res = await sheets.spreadsheets.values.get({ spreadsheetId, range: 'Sheet1!A:K' });
+      rows = res.data.values || [];
+    } catch (e: any) {
+      if (e.message && e.message.includes('Unable to parse range')) {
+        targetSheet = 'Hoja 1';
+        const res2 = await sheets.spreadsheets.values.get({ spreadsheetId, range: 'Hoja 1!A:K' });
+        rows = res2.data.values || [];
+      } else {
+        throw e;
+      }
+    }
+
+    // Calcular la fecha de mañana en formato YYYY-MM-DD (hora Colombia)
+    const manana = new Date();
+    manana.setHours(manana.getHours() - 5); // Ajuste a Colombia
+    manana.setDate(manana.getDate() + 1);
+    const fechaMananaStr = manana.toISOString().split('T')[0];
+
+    const reservasManana: any[] = [];
+    for (let i = 1; i < rows.length; i++) {
+      const row = rows[i];
+      if (!row || row.length < 4) continue; // Si está vacía o no tiene teléfono
+      const fechaReserva = row[0]; // Columna A
+      if (fechaReserva && fechaReserva.includes(fechaMananaStr)) {
+        reservasManana.push({
+          hora: row[1] || '',
+          nombre: row[2] || '',
+          telefono: row[3] || '',
+          personas: row[4] || ''
+        });
+      }
+    }
+    return reservasManana;
+  } catch (error) {
+    console.error('Error al obtener reservas de mañana:', error);
+    return [];
   }
 };

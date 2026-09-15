@@ -6,7 +6,8 @@ import { getAiResponse, transcribeAudio } from './services/ai.service';
 import { sock, initWhatsAppClient, sendWhatsAppMessage, downloadWhatsAppMedia } from './services/whatsapp.service';
 import { guardarReservaCSV } from './services/reservas.service';
 import { agregarEventoCalendario } from './services/calendar.service';
-import { guardarReservaExcel } from './services/sheets.service';
+import cron from 'node-cron';
+import { guardarReservaExcel, obtenerReservasManana } from './services/sheets.service';
 
 dotenv.config();
 
@@ -272,6 +273,30 @@ Como ya tomamos tus datos, solo necesitamos el comprobante para dejar tu reserva
         console.error("Error global en el handler de mensajes:", e);
     }
 };
+
+
+
+// --- MÓDULO DE RECORDATORIOS (CRON JOB) ---
+// Se ejecuta todos los días a las 9:00 AM hora de Colombia
+cron.schedule('0 9 * * *', async () => {
+    console.log('[CRON] Buscando reservas para mañana...');
+    const reservasManana = await obtenerReservasManana();
+    for (const r of reservasManana) {
+        try {
+            // El formato del celular ya debe tener el @s.whatsapp.net o se lo enviamos limpio
+            const phone = r.telefono.includes('@s.whatsapp.net') ? r.telefono : `${r.telefono}@s.whatsapp.net`;
+            const msg = `¡Hola ${r.nombre}! 🌟 Te escribimos de La Aquarela para recordarte que mañana tienes una reserva con nosotros a las ${r.hora} para ${r.personas} personas. ¡Te esperamos con mucha emoción!`;
+            await sendWhatsAppMessage(phone, msg);
+            console.log(`[CRON] Recordatorio enviado a ${r.nombre} (${r.telefono})`);
+            // Esperar 2 segundos entre mensajes para no saturar WhatsApp
+            await new Promise(resolve => setTimeout(resolve, 2000));
+        } catch (e) {
+            console.error(`[CRON] Error enviando recordatorio a ${r.nombre}:`, e);
+        }
+    }
+}, {
+    timezone: "America/Bogota"
+});
 
 // Inicializar el cliente de WhatsApp Web (generará el código QR en consola)
 initWhatsAppClient(handleMessage);

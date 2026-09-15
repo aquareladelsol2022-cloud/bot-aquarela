@@ -133,11 +133,11 @@ export const getAiResponse = async (message: string, phone: string): Promise<str
     
     // Check if the AI output the JSON block for reservation directly
     if (aiMessage?.content && aiMessage.content.includes('[RESERVA_TRIGGER]')) {
-        // Inyectamos en la memoria que la reserva ya fue exitosa
+        // Inyectamos en la memoria que la reserva ya fue exitosa, pero permitimos modificación
         if (conversations[phone]) {
           conversations[phone].push({
              role: 'system',
-             content: 'CRÍTICO: Ya has realizado la reserva para este cliente exitosamente. NO vuelvas a enviar el bloque [RESERVA_TRIGGER].'
+             content: 'CRÍTICO: La reserva ya está registrada en la base de datos. Si el cliente no pide cambios, NO envíes el bloque [RESERVA_TRIGGER] de nuevo. PERO si el cliente pide modificar la fecha, hora, personas, zona o cualquier detalle, DEBES enviar NUEVAMENTE el bloque [RESERVA_TRIGGER] completo con TODOS los datos actualizados para sobrescribir su reserva.'
           });
         }
     }
